@@ -68,34 +68,46 @@
   }
 
   .dark {
-    --background: 230 60% 6%;
-    --foreground: 0 0% 95%;
+    /* ========== Dark Mode ========== */
 
-    --card: 230 50% 10%;
-    --card-foreground: 0 0% 95%;
+    /* Background & Foreground */
+    --background: 230 60% 6%;           /* Very dark navy */
+    --foreground: 0 0% 95%;             /* Near-white */
 
-    --popover: 230 50% 10%;
-    --popover-foreground: 0 0% 95%;
+    /* Card */
+    --card: 230 50% 10%;                /* Dark navy card */
+    --card-foreground: 0 0% 95%;        /* Near-white */
 
+    /* Popover */
+    --popover: 230 50% 10%;             /* Dark navy */
+    --popover-foreground: 0 0% 95%;     /* Near-white */
+
+    /* Primary — Bright Blue (#2D5BFF) in dark mode */
     --primary: 227 100% 58%;
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 0 0% 100%;    /* White */
 
+    /* Secondary — Dark surface */
     --secondary: 230 40% 14%;
     --secondary-foreground: 0 0% 95%;
 
+    /* Muted — Dark surface */
     --muted: 230 40% 14%;
-    --muted-foreground: 220 10% 60%;
+    --muted-foreground: 220 10% 60%;    /* Muted gray */
 
+    /* Accent — Teal Cyan (#00B4D8) in dark mode */
     --accent: 193 100% 42%;
     --accent-foreground: 0 0% 100%;
 
+    /* Destructive — Dark red */
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 95%;
 
-    --border: 230 40% 18%;
-    --input: 230 40% 18%;
-    --ring: 227 100% 58%;
+    /* Borders & Input */
+    --border: 230 40% 18%;              /* Dark border */
+    --input: 230 40% 18%;               /* Dark input */
+    --ring: 227 100% 58%;               /* Blue focus ring */
 
+    /* ========== Sidebar (Dark) ========== */
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
