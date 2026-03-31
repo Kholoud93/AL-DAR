@@ -4,51 +4,59 @@
 
 @layer base {
   :root {
-    /* ALDAR Brand Palette */
-    --background: 0 0% 100%;
-    --foreground: 230 60% 10%;
+    /* ========== ALDAR Brand Palette ========== */
 
-    --card: 0 0% 100%;
-    --card-foreground: 230 60% 10%;
+    /* Background & Foreground */
+    --background: 0 0% 100%;            /* White */
+    --foreground: 230 60% 10%;          /* Near-black navy */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 230 60% 10%;
+    /* Card */
+    --card: 0 0% 100%;                  /* White */
+    --card-foreground: 230 60% 10%;     /* Near-black navy */
 
-    /* Deep Navy - Primary brand color */
+    /* Popover */
+    --popover: 0 0% 100%;              /* White */
+    --popover-foreground: 230 60% 10%; /* Near-black navy */
+
+    /* Primary — Deep Navy (#1B1464) */
     --primary: 248 70% 24%;
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 0 0% 100%;    /* White */
 
-    /* Light gray surface */
+    /* Secondary — Light Gray (#F0F2F7) */
     --secondary: 220 20% 96%;
-    --secondary-foreground: 248 70% 24%;
+    --secondary-foreground: 248 70% 24%; /* Navy */
 
+    /* Muted — Light Gray (#F0F2F7) */
     --muted: 220 20% 96%;
-    --muted-foreground: 220 10% 46%;
+    --muted-foreground: 220 10% 46%;    /* Medium gray */
 
-    /* Bright blue accent */
+    /* Accent — Bright Blue (#2D5BFF) */
     --accent: 227 100% 58%;
-    --accent-foreground: 0 0% 100%;
+    --accent-foreground: 0 0% 100%;     /* White */
 
+    /* Destructive — Red (#E53E3E) */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 90%;
-    --input: 220 20% 90%;
-    --ring: 248 70% 24%;
+    /* Borders & Input */
+    --border: 220 20% 90%;             /* Light gray border */
+    --input: 220 20% 90%;              /* Light gray input */
+    --ring: 248 70% 24%;               /* Navy focus ring */
 
     --radius: 0.5rem;
 
-    /* ALDAR Extended Palette */
-    --aldar-navy: 248 70% 24%;
-    --aldar-blue: 227 100% 58%;
-    --aldar-cyan: 193 100% 42%;
-    --aldar-dark: 230 60% 10%;
-    --aldar-light: 220 20% 97%;
-    --aldar-gold: 40 90% 55%;
+    /* ========== ALDAR Extended Brand Colors ========== */
+    --aldar-navy: 248 70% 24%;         /* Deep Navy — #1B1464 */
+    --aldar-blue: 227 100% 58%;        /* Bright Blue — #2D5BFF */
+    --aldar-cyan: 193 100% 42%;        /* Teal Cyan — #00B4D8 */
+    --aldar-dark: 230 60% 10%;         /* Near Black — #0A0F1F */
+    --aldar-light: 220 20% 97%;        /* Off White — #F5F6F9 */
+    --aldar-gold: 40 90% 55%;          /* Warm Gold — #E6A817 */
 
-    /* CTA Section gradient */
+    /* CTA Gradient: Navy → Dark Blue */
     --gradient-cta: linear-gradient(135deg, hsl(248 70% 24%), hsl(227 100% 38%));
 
+    /* ========== Sidebar ========== */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
