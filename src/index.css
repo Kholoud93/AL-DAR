@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ========== ALDAR Brand Palette ========== */
+
+    /* Background & Foreground */
+    --background: #ffffff; /* White */
+    --foreground: #0a0f29; /* Near-black navy */
+
+    /* Card */
+    --card: #ffffff; /* White */
+    --card-foreground: #0a0f29; /* Near-black navy */
+
+    /* Popover */
+    --popover: #ffffff; /* White */
+    --popover-foreground: #0a0f29; /* Near-black navy */
+
+    /* Primary — Deep Navy (#1B1464) */
+    --primary: #1b1464;
+    --primary-foreground: #ffffff; /* White */
+
+    /* Secondary — Light Gray (#F0F2F7) */
+    --secondary: #f0f2f7;
+    --secondary-foreground: #1b1464; /* Navy */
+
+    /* Muted — Light Gray (#F0F2F7) */
+    --muted: #f0f2f7;
+    --muted-foreground: #6a7280; /* Medium gray */
+
+    /* Accent — Bright Blue (#2D5BFF) */
+    --accent: #2d5bff;
+    --accent-foreground: #ffffff; /* White */
+
+    /* Destructive — Red (#E53E3E) */
+    --destructive: #e53e3e;
+    --destructive-foreground: #ffffff;
+
+    /* Borders & Input */
+    --border: #dbe1eb; /* Light gray border */
+    --input: #dbe1eb; /* Light gray input */
+    --ring: #1b1464; /* Navy focus ring */
+
+    --radius: 0.5rem;
+
+    /* ========== ALDAR Extended Brand Colors ========== */
+    --aldar-navy: #1b1464; /* Deep Navy — #1B1464 */
+    --aldar-blue: #2d5bff; /* Bright Blue — #2D5BFF */
+    --aldar-cyan: #00b4d8; /* Teal Cyan — #00B4D8 */
+    --aldar-dark: #0a0f1f; /* Near Black — #0A0F1F */
+    --aldar-light: #f5f6f9; /* Off White — #F5F6F9 */
+    --aldar-gold: #e6a817; /* Warm Gold — #E6A817 */
+
+    /* CTA Gradient: Navy → Dark Blue */
+    --gradient-cta: linear-gradient(135deg, #1b1464, #0038c2);
+
+    /* ========== Sidebar ========== */
+    --sidebar-background: #fafafa;
+    --sidebar-foreground: #3f3f47;
+    --sidebar-primary: #18181b;
+    --sidebar-primary-foreground: #fafafa;
+    --sidebar-accent: #f4f4f5;
+    --sidebar-accent-foreground: #18181b;
+    --sidebar-border: #e5e7eb;
+    --sidebar-ring: #3b82f6;
+  }
+
+  .dark {
+    /* ========== Dark Mode ========== */
+
+    /* Background & Foreground */
+    --background: #060916; /* Very dark navy */
+    --foreground: #f2f2f2; /* Near-white */
+
+    /* Card */
+    --card: #0d1326; /* Dark navy card */
+    --card-foreground: #f2f2f2; /* Near-white */
+
+    /* Popover */
+    --popover: #0d1326; /* Dark navy */
+    --popover-foreground: #f2f2f2; /* Near-white */
+
+    /* Primary — Bright Blue (#2D5BFF) in dark mode */
+    --primary: #2d5bff;
+    --primary-foreground: #ffffff; /* White */
+
+    /* Secondary — Dark surface */
+    --secondary: #151d32;
+    --secondary-foreground: #f2f2f2;
+
+    /* Muted — Dark surface */
+    --muted: #151d32;
+    --muted-foreground: #8f98a8; /* Muted gray */
+
+    /* Accent — Teal Cyan (#00B4D8) in dark mode */
+    --accent: #00b4d8;
+    --accent-foreground: #ffffff;
+
+    /* Destructive — Dark red */
+    --destructive: #7c1d1d;
+    --destructive-foreground: #f2f2f2;
+
+    /* Borders & Input */
+    --border: #1b243d; /* Dark border */
+    --input: #1b243d; /* Dark input */
+    --ring: #2d5bff; /* Blue focus ring */
+
+    /* ========== Sidebar (Dark) ========== */
+    --sidebar-background: #18181b;
+    --sidebar-foreground: #f4f4f5;
+    --sidebar-primary: #2563eb;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #27272a;
+    --sidebar-accent-foreground: #f4f4f5;
+    --sidebar-border: #27272a;
+    --sidebar-ring: #3b82f6;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
