@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# ALDAR
 
-TODO: Document your project here
+Next.js project for ALDAR.

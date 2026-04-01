@@ -42,4 +42,4 @@ export interface StatItem {
   icon: string;
 }
 
-export type Language = 'en' | 'ar';
+export type Language = "en" | "ar";

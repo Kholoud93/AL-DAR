@@ -7,115 +7,115 @@
     /* ========== ALDAR Brand Palette ========== */
 
     /* Background & Foreground */
-    --background: 0 0% 100%;            /* White */
-    --foreground: 230 60% 10%;          /* Near-black navy */
+    --background: #ffffff; /* White */
+    --foreground: #0a0f29; /* Near-black navy */
 
     /* Card */
-    --card: 0 0% 100%;                  /* White */
-    --card-foreground: 230 60% 10%;     /* Near-black navy */
+    --card: #ffffff; /* White */
+    --card-foreground: #0a0f29; /* Near-black navy */
 
     /* Popover */
-    --popover: 0 0% 100%;              /* White */
-    --popover-foreground: 230 60% 10%; /* Near-black navy */
+    --popover: #ffffff; /* White */
+    --popover-foreground: #0a0f29; /* Near-black navy */
 
     /* Primary — Deep Navy (#1B1464) */
-    --primary: 248 70% 24%;
-    --primary-foreground: 0 0% 100%;    /* White */
+    --primary: #1b1464;
+    --primary-foreground: #ffffff; /* White */
 
     /* Secondary — Light Gray (#F0F2F7) */
-    --secondary: 220 20% 96%;
-    --secondary-foreground: 248 70% 24%; /* Navy */
+    --secondary: #f0f2f7;
+    --secondary-foreground: #1b1464; /* Navy */
 
     /* Muted — Light Gray (#F0F2F7) */
-    --muted: 220 20% 96%;
-    --muted-foreground: 220 10% 46%;    /* Medium gray */
+    --muted: #f0f2f7;
+    --muted-foreground: #6a7280; /* Medium gray */
 
     /* Accent — Bright Blue (#2D5BFF) */
-    --accent: 227 100% 58%;
-    --accent-foreground: 0 0% 100%;     /* White */
+    --accent: #2d5bff;
+    --accent-foreground: #ffffff; /* White */
 
     /* Destructive — Red (#E53E3E) */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: #e53e3e;
+    --destructive-foreground: #ffffff;
 
     /* Borders & Input */
-    --border: 220 20% 90%;             /* Light gray border */
-    --input: 220 20% 90%;              /* Light gray input */
-    --ring: 248 70% 24%;               /* Navy focus ring */
+    --border: #dbe1eb; /* Light gray border */
+    --input: #dbe1eb; /* Light gray input */
+    --ring: #1b1464; /* Navy focus ring */
 
     --radius: 0.5rem;
 
     /* ========== ALDAR Extended Brand Colors ========== */
-    --aldar-navy: 248 70% 24%;         /* Deep Navy — #1B1464 */
-    --aldar-blue: 227 100% 58%;        /* Bright Blue — #2D5BFF */
-    --aldar-cyan: 193 100% 42%;        /* Teal Cyan — #00B4D8 */
-    --aldar-dark: 230 60% 10%;         /* Near Black — #0A0F1F */
-    --aldar-light: 220 20% 97%;        /* Off White — #F5F6F9 */
-    --aldar-gold: 40 90% 55%;          /* Warm Gold — #E6A817 */
+    --aldar-navy: #1b1464; /* Deep Navy — #1B1464 */
+    --aldar-blue: #2d5bff; /* Bright Blue — #2D5BFF */
+    --aldar-cyan: #00b4d8; /* Teal Cyan — #00B4D8 */
+    --aldar-dark: #0a0f1f; /* Near Black — #0A0F1F */
+    --aldar-light: #f5f6f9; /* Off White — #F5F6F9 */
+    --aldar-gold: #e6a817; /* Warm Gold — #E6A817 */
 
     /* CTA Gradient: Navy → Dark Blue */
-    --gradient-cta: linear-gradient(135deg, hsl(248 70% 24%), hsl(227 100% 38%));
+    --gradient-cta: linear-gradient(135deg, #1b1464, #0038c2);
 
     /* ========== Sidebar ========== */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: #fafafa;
+    --sidebar-foreground: #3f3f47;
+    --sidebar-primary: #18181b;
+    --sidebar-primary-foreground: #fafafa;
+    --sidebar-accent: #f4f4f5;
+    --sidebar-accent-foreground: #18181b;
+    --sidebar-border: #e5e7eb;
+    --sidebar-ring: #3b82f6;
   }
 
   .dark {
     /* ========== Dark Mode ========== */
 
     /* Background & Foreground */
-    --background: 230 60% 6%;           /* Very dark navy */
-    --foreground: 0 0% 95%;             /* Near-white */
+    --background: #060916; /* Very dark navy */
+    --foreground: #f2f2f2; /* Near-white */
 
     /* Card */
-    --card: 230 50% 10%;                /* Dark navy card */
-    --card-foreground: 0 0% 95%;        /* Near-white */
+    --card: #0d1326; /* Dark navy card */
+    --card-foreground: #f2f2f2; /* Near-white */
 
     /* Popover */
-    --popover: 230 50% 10%;             /* Dark navy */
-    --popover-foreground: 0 0% 95%;     /* Near-white */
+    --popover: #0d1326; /* Dark navy */
+    --popover-foreground: #f2f2f2; /* Near-white */
 
     /* Primary — Bright Blue (#2D5BFF) in dark mode */
-    --primary: 227 100% 58%;
-    --primary-foreground: 0 0% 100%;    /* White */
+    --primary: #2d5bff;
+    --primary-foreground: #ffffff; /* White */
 
     /* Secondary — Dark surface */
-    --secondary: 230 40% 14%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: #151d32;
+    --secondary-foreground: #f2f2f2;
 
     /* Muted — Dark surface */
-    --muted: 230 40% 14%;
-    --muted-foreground: 220 10% 60%;    /* Muted gray */
+    --muted: #151d32;
+    --muted-foreground: #8f98a8; /* Muted gray */
 
     /* Accent — Teal Cyan (#00B4D8) in dark mode */
-    --accent: 193 100% 42%;
-    --accent-foreground: 0 0% 100%;
+    --accent: #00b4d8;
+    --accent-foreground: #ffffff;
 
     /* Destructive — Dark red */
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 0 0% 95%;
+    --destructive: #7c1d1d;
+    --destructive-foreground: #f2f2f2;
 
     /* Borders & Input */
-    --border: 230 40% 18%;              /* Dark border */
-    --input: 230 40% 18%;               /* Dark input */
-    --ring: 227 100% 58%;               /* Blue focus ring */
+    --border: #1b243d; /* Dark border */
+    --input: #1b243d; /* Dark input */
+    --ring: #2d5bff; /* Blue focus ring */
 
     /* ========== Sidebar (Dark) ========== */
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: #18181b;
+    --sidebar-foreground: #f4f4f5;
+    --sidebar-primary: #2563eb;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #27272a;
+    --sidebar-accent-foreground: #f4f4f5;
+    --sidebar-border: #27272a;
+    --sidebar-ring: #3b82f6;
   }
 }
 
