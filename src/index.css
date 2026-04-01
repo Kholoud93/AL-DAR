@@ -4,59 +4,45 @@
 
 @layer base {
   :root {
-    /* ========== ALDAR Brand Palette ========== */
+    --background: #ffffff;
+    --foreground: #0a0f29;
 
-    /* Background & Foreground */
-    --background: #ffffff; /* White */
-    --foreground: #0a0f29; /* Near-black navy */
+    --card: #ffffff;
+    --card-foreground: #0a0f29;
 
-    /* Card */
-    --card: #ffffff; /* White */
-    --card-foreground: #0a0f29; /* Near-black navy */
+    --popover: #ffffff;
+    --popover-foreground: #0a0f29;
 
-    /* Popover */
-    --popover: #ffffff; /* White */
-    --popover-foreground: #0a0f29; /* Near-black navy */
-
-    /* Primary — Deep Navy (#1B1464) */
     --primary: #1b1464;
-    --primary-foreground: #ffffff; /* White */
+    --primary-foreground: #ffffff;
 
-    /* Secondary — Light Gray (#F0F2F7) */
     --secondary: #f0f2f7;
-    --secondary-foreground: #1b1464; /* Navy */
+    --secondary-foreground: #1b1464;
 
-    /* Muted — Light Gray (#F0F2F7) */
     --muted: #f0f2f7;
-    --muted-foreground: #6a7280; /* Medium gray */
+    --muted-foreground: #6a7280;
 
-    /* Accent — Bright Blue (#2D5BFF) */
     --accent: #2d5bff;
-    --accent-foreground: #ffffff; /* White */
+    --accent-foreground: #ffffff;
 
-    /* Destructive — Red (#E53E3E) */
     --destructive: #e53e3e;
     --destructive-foreground: #ffffff;
 
-    /* Borders & Input */
-    --border: #dbe1eb; /* Light gray border */
-    --input: #dbe1eb; /* Light gray input */
-    --ring: #1b1464; /* Navy focus ring */
+    --border: #dbe1eb;
+    --input: #dbe1eb;
+    --ring: #1b1464;
 
     --radius: 0.5rem;
 
-    /* ========== ALDAR Extended Brand Colors ========== */
-    --aldar-navy: #1b1464; /* Deep Navy — #1B1464 */
-    --aldar-blue: #2d5bff; /* Bright Blue — #2D5BFF */
-    --aldar-cyan: #00b4d8; /* Teal Cyan — #00B4D8 */
-    --aldar-dark: #0a0f1f; /* Near Black — #0A0F1F */
-    --aldar-light: #f5f6f9; /* Off White — #F5F6F9 */
-    --aldar-gold: #e6a817; /* Warm Gold — #E6A817 */
+    --aldar-navy: #1b1464;
+    --aldar-blue: #2d5bff;
+    --aldar-cyan: #00b4d8;
+    --aldar-dark: #0a0f1f;
+    --aldar-light: #f5f6f9;
+    --aldar-gold: #e6a817;
 
-    /* CTA Gradient: Navy → Dark Blue */
     --gradient-cta: linear-gradient(135deg, #1b1464, #0038c2);
 
-    /* ========== Sidebar ========== */
     --sidebar-background: #fafafa;
     --sidebar-foreground: #3f3f47;
     --sidebar-primary: #18181b;
@@ -68,46 +54,34 @@
   }
 
   .dark {
-    /* ========== Dark Mode ========== */
+    --background: #060916;
+    --foreground: #f2f2f2;
 
-    /* Background & Foreground */
-    --background: #060916; /* Very dark navy */
-    --foreground: #f2f2f2; /* Near-white */
+    --card: #0d1326;
+    --card-foreground: #f2f2f2;
 
-    /* Card */
-    --card: #0d1326; /* Dark navy card */
-    --card-foreground: #f2f2f2; /* Near-white */
+    --popover: #0d1326;
+    --popover-foreground: #f2f2f2;
 
-    /* Popover */
-    --popover: #0d1326; /* Dark navy */
-    --popover-foreground: #f2f2f2; /* Near-white */
-
-    /* Primary — Bright Blue (#2D5BFF) in dark mode */
     --primary: #2d5bff;
-    --primary-foreground: #ffffff; /* White */
+    --primary-foreground: #ffffff;
 
-    /* Secondary — Dark surface */
     --secondary: #151d32;
     --secondary-foreground: #f2f2f2;
 
-    /* Muted — Dark surface */
     --muted: #151d32;
-    --muted-foreground: #8f98a8; /* Muted gray */
+    --muted-foreground: #8f98a8;
 
-    /* Accent — Teal Cyan (#00B4D8) in dark mode */
     --accent: #00b4d8;
     --accent-foreground: #ffffff;
 
-    /* Destructive — Dark red */
     --destructive: #7c1d1d;
     --destructive-foreground: #f2f2f2;
 
-    /* Borders & Input */
-    --border: #1b243d; /* Dark border */
-    --input: #1b243d; /* Dark input */
-    --ring: #2d5bff; /* Blue focus ring */
+    --border: #1b243d;
+    --input: #1b243d;
+    --ring: #2d5bff;
 
-    /* ========== Sidebar (Dark) ========== */
     --sidebar-background: #18181b;
     --sidebar-foreground: #f4f4f5;
     --sidebar-primary: #2563eb;

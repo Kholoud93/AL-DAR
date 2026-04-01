@@ -1,4 +1,3 @@
-// TODO: Language context hook for AR/EN switching with RTL support
 import { useState } from "react";
 import type { Language } from "@/types";
 import { getLanguagePack } from "@/lang";
