@@ -1,8 +1,21 @@
 import type { Metadata } from "next";
+import { Inter, Manrope } from "next/font/google";
 import type { ReactNode } from "react";
 import "../index.css";
 import { AppProviders } from "@/components/providers";
 import Header from "@/components/layout/Header";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
@@ -52,7 +65,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className={`${manrope.variable} ${inter.variable} font-sans antialiased`}>
         <AppProviders>
           <Header />
           {children}
