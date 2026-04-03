@@ -17,9 +17,9 @@ export const homeEn: HomeTranslations = {
   hero: {
     title: "Sustainable Rural Sanitation Services.",
     subtitle:
-      "Pioneering impactful public infrastructure with integrated digital design and engineering excellence.",
-    primaryCta: "View Project Details",
-    secondaryCta: "Learn More",
+      "Pioneering ecological infrastructure development across regional Egypt, bringing clean water and sanitation to millions of citizens through advanced engineering.",
+    primaryCta: "View Project Detail",
+    secondaryCta: "Our Portfolio",
   },
   about: {
     sectionLabel: "About Us",
@@ -32,14 +32,19 @@ export const homeEn: HomeTranslations = {
     },
   },
   services: {
-    sectionLabel: "Our Services",
+    sectionLabel: "Our Expertise",
     title: "Integrated Design Solutions",
     description:
-      "We provide end-to-end engineering and project delivery services across critical infrastructure sectors.",
+      "Providing end-to-end consulting services from feasibility studies to project commissioning and asset management.",
     items: {
       constructionManagement: "Construction Management",
       structuralEngineering: "Structural Engineering",
       urbanPlanningAndDesign: "Urban Planning & Design",
+    },
+    itemTags: {
+      constructionManagement: "Technical service",
+      structuralEngineering: "Structural design",
+      urbanPlanningAndDesign: "Sustainable development",
     },
   },
   certificates: {

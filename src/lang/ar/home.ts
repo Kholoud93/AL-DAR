@@ -32,14 +32,19 @@ export const homeAr: HomeTranslations = {
     },
   },
   services: {
-    sectionLabel: "خدماتنا",
+    sectionLabel: "خبراتنا",
     title: "حلول تصميم متكاملة",
     description:
-      "نقدم خدمات هندسية متكاملة وتسليم مشاريع شامل عبر قطاعات البنية التحتية الحيوية.",
+      "نقدم استشارات شاملة من دراسات الجدوى إلى تشغيل المشروع وإدارة الأصول.",
     items: {
       constructionManagement: "إدارة البناء",
       structuralEngineering: "الهندسة الإنشائية",
       urbanPlanningAndDesign: "التخطيط العمراني والتصميم",
+    },
+    itemTags: {
+      constructionManagement: "خدمة تقنية",
+      structuralEngineering: "تصميم إنشائي",
+      urbanPlanningAndDesign: "تنمية مستدامة",
     },
   },
   certificates: {
