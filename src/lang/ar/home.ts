@@ -51,9 +51,9 @@ export const homeAr: HomeTranslations = {
     sectionLabel: "الاعترافات والتأهيلات",
     title: "الاعتمادات والشهادات",
     items: {
-      iso9001: "ISO 9001",
-      iso14001: "ISO 14001",
-      iso45001: "ISO 45001",
+      iso9001: "ISO 9001:2015",
+      iso14001: "ISO 14001:2015",
+      iso45001: "ISO 45001:2018",
       engineeringExcellence: "التميّز الهندسي",
     },
   },

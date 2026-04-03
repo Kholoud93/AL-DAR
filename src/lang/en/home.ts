@@ -51,10 +51,10 @@ export const homeEn: HomeTranslations = {
     sectionLabel: "Recognitions and Qualifications",
     title: "Accreditations & Certificates",
     items: {
-      iso9001: "ISO 9001",
-      iso14001: "ISO 14001",
-      iso45001: "ISO 45001",
-      engineeringExcellence: "Engineering Excellence",
+      iso9001: "ISO 9001:2015",
+      iso14001: "ISO 14001:2015",
+      iso45001: "ISO 45001:2018",
+      engineeringExcellence: "Eng. Excellence",
     },
   },
   clients: {
