@@ -34,6 +34,22 @@
 
     --radius: 0.5rem;
 
+    /* Semantic design tokens */
+    --color-brand-primary: #1b1464;
+    --color-brand-primary-hover: #312e81;
+    --color-brand-on-primary: #ffffff;
+    --color-text-label: #6366f1;
+    --color-text-title: #2e2b6b;
+    --color-text-description: #43474f;
+    --color-surface-page: #ffffff;
+    --color-surface-subtle: #f3f4f8;
+    --color-surface-card: #fdfdff;
+    --color-surface-elevated: #f5f6fb;
+    --color-text-primary: var(--color-text-title);
+    --color-text-secondary: var(--color-text-description);
+    --color-text-muted: #666b7a;
+    --color-border-subtle: #eceef5;
+
     --aldar-navy: #1b1464;
     --aldar-blue: #2d5bff;
     --aldar-cyan: #00b4d8;
@@ -54,11 +70,16 @@
       rgba(27, 20, 100, 0.7) 55%,
       rgba(27, 20, 100, 0.96) 100%
     );
-    --contact-button: rgba(49, 46, 129, 1);
+    --contact-button: var(--color-brand-primary-hover);
    
-    --service-label: #6366f1;
-    --service-title: #2e2b6b;
-    --service-description: #43474f;
+    --service-label: var(--color-text-label);
+    --service-title: var(--color-text-primary);
+    --service-description: var(--color-text-secondary);
+    --certificate-section-bg: var(--color-surface-subtle);
+    --certificate-card-bg: var(--color-surface-card);
+    --certificate-card-border: var(--color-border-subtle);
+    --certificate-icon-bg: var(--color-surface-elevated);
+    --certificate-subtitle: var(--color-text-muted);
   
     --service-tag: #d3daea;
     --service-card-title: #ffffff;
@@ -102,6 +123,22 @@
     --border: #1b243d;
     --input: #1b243d;
     --ring: #2d5bff;
+    /* Semantic design tokens (dark) */
+    --color-brand-primary: #5f86ff;
+    --color-brand-primary-hover: #7a9cff;
+    --color-brand-on-primary: #ffffff;
+    --color-text-label: #5f86ff;
+    --color-text-title: #e8edff;
+    --color-text-description: #a3afc3;
+    --color-surface-page: #060916;
+    --color-surface-subtle: #11182b;
+    --color-surface-card: #151d32;
+    --color-surface-elevated: #1c2742;
+    --color-text-primary: var(--color-text-title);
+    --color-text-secondary: var(--color-text-description);
+    --color-text-muted: #9da9c3;
+    --color-border-subtle: #25304b;
+
     --gradient-service-overlay: linear-gradient(
       180deg,
       rgba(45, 91, 255, 0.14) 0%,
@@ -114,9 +151,14 @@
       rgba(27, 20, 100, 0.76) 55%,
       rgba(10, 15, 31, 0.98) 100%
     );
-    --service-label: #5f86ff;
-    --service-title: #e8edff;
-    --service-description: #a3afc3;
+    --service-label: var(--color-text-label);
+    --service-title: var(--color-text-primary);
+    --service-description: var(--color-text-secondary);
+    --certificate-section-bg: var(--color-surface-subtle);
+    --certificate-card-bg: var(--color-surface-card);
+    --certificate-card-border: var(--color-border-subtle);
+    --certificate-icon-bg: var(--color-surface-elevated);
+    --certificate-subtitle: var(--color-text-muted);
     --service-tag: #d7e0ff;
     --service-card-title: #ffffff;
     --service-card-tag: rgba(165, 180, 252, 1);

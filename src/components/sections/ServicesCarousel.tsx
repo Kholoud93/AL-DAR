@@ -43,19 +43,19 @@ export default function ServicesCarousel({ className }: ServicesCarouselProps) {
         className,
       )}
     >
-      <div className="mx-auto max-w-[1280px] min-w-0 px-6">
+      <div className="mx-auto max-w-screen-xl min-w-0 px-6">
         <div className="mb-12 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <div>
             <p className="mb-2 font-inter text-xs font-semibold uppercase tracking-wider text-[color:var(--service-label)] sm:text-sm">
               {services.sectionLabel}
             </p>
-            <h2 className="font-sans text-4xl font-bold leading-[2.5rem] tracking-normal text-[color:var(--service-title)] sm:text-5xl sm:leading-[3rem]">
+            <h2 className="font-sans text-3xl font-bold leading-tight tracking-normal text-[color:var(--service-title)] sm:text-4xl lg:text-5xl">
               {services.title}
             </h2>
           </div>
           <p
             className={cn(
-              "max-w-[436px] font-inter text-sm font-light leading-5 tracking-normal text-[color:var(--service-description)]",
+              "max-w-md font-inter text-sm font-light leading-relaxed tracking-normal text-[color:var(--service-description)] sm:text-base",
               isRTL ? "lg:text-start" : "lg:text-end",
             )}
           >
@@ -84,7 +84,7 @@ export default function ServicesCarousel({ className }: ServicesCarouselProps) {
                     <div
                       className={cn(
                         "group relative w-full cursor-pointer overflow-hidden rounded-none border-y border-border/60 shadow-lg",
-                        "h-[400px] sm:h-[440px] lg:h-[480px]",
+                        "aspect-[4/5] sm:aspect-[3/4] lg:aspect-[2/3]",
                       )}
                     >
                       <div className="relative h-full min-h-0 w-full overflow-hidden">
@@ -108,7 +108,7 @@ export default function ServicesCarousel({ className }: ServicesCarouselProps) {
                         <p className="font-inter text-xs font-medium uppercase leading-5 tracking-[0.12em] text-[color:var(--service-card-tag)]">
                           {tag}
                         </p>
-                        <h3 className="mt-2 font-sans text-[30px] font-bold leading-[2rem] text-[color:var(--service-card-title)]">
+                        <h3 className="mt-2 font-sans text-2xl font-bold leading-tight text-[color:var(--service-card-title)] sm:text-3xl">
                           {title}
                         </h3>
                       </div>

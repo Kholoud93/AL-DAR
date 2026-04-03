@@ -21,7 +21,7 @@ export default function ClientsPartners({ className }: ClientsPartnersProps) {
         className,
       )}
     >
-      <div className="mx-auto max-w-[1280px] px-6">
+      <div className="mx-auto max-w-screen-xl px-6">
         <p className="text-sm font-semibold uppercase tracking-wider text-primary">
           {clients.sectionLabel}
         </p>
@@ -32,7 +32,7 @@ export default function ClientsPartners({ className }: ClientsPartnersProps) {
           {PLACEHOLDERS.map((n) => (
             <div
               key={n}
-              className="flex h-11 min-w-[6.5rem] items-center justify-center rounded-md bg-card px-4 text-xs font-medium text-muted-foreground shadow-sm ring-1 ring-border/60"
+              className="flex h-11 min-w-24 items-center justify-center rounded-md bg-card px-4 text-xs font-medium text-muted-foreground shadow-sm ring-1 ring-border/60 sm:min-w-28"
             >
               Partner {n}
             </div>

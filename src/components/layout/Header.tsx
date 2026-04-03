@@ -65,15 +65,15 @@ function NavLinks({
             className={cn(
               "transition-colors",
               variant === "desktop" &&
-                "text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white",
+                "text-[color:var(--color-text-muted)] hover:text-[color:var(--color-text-title)]",
               variant === "mobile" &&
-                "rounded-md px-3 py-3 text-base text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white",
+                "rounded-md px-3 py-3 text-base text-[color:var(--color-text-muted)] hover:text-[color:var(--color-text-title)]",
               isActive &&
                 variant === "desktop" &&
-                "font-semibold text-[color:var(--contact-button)] underline decoration-[color:var(--contact-button)]/70 underline-offset-[5px] hover:text-[color:var(--contact-button)] dark:text-[color:var(--contact-button)] dark:decoration-[color:var(--contact-button)]/80 dark:hover:text-[color:var(--contact-button)]",
+                "font-semibold text-[color:var(--color-brand-primary)] underline decoration-[color:var(--color-brand-primary)]/70 underline-offset-4 hover:text-[color:var(--color-brand-primary)]",
               isActive &&
                 variant === "mobile" &&
-                "font-semibold text-[color:var(--contact-button)] underline decoration-[color:var(--contact-button)]/70 underline-offset-[5px] dark:text-[color:var(--contact-button)] dark:decoration-[color:var(--contact-button)]/80",
+                "font-semibold text-[color:var(--color-brand-primary)] underline decoration-[color:var(--color-brand-primary)]/70 underline-offset-4",
             )}
           >
             {label}
@@ -104,10 +104,10 @@ export default function Header() {
   return (
     <>
       <header
-        className="fixed inset-x-0 top-0 z-50 w-full border-b border-slate-200/80 bg-background/95 shadow-[0_1px_0_0_rgba(0,0,0,0.04)] backdrop-blur-md transition-colors dark:border-white/10 dark:bg-card/95 dark:shadow-[0_1px_0_0_rgba(255,255,255,0.06)]"
+        className="fixed inset-x-0 top-0 z-50 w-full border-b border-border/80 bg-background/95 shadow-[0_1px_0_0_rgba(0,0,0,0.04)] backdrop-blur-md transition-colors dark:shadow-[0_1px_0_0_rgba(255,255,255,0.06)]"
         dir={dir}
       >
-        <div className="mx-auto flex min-h-[4rem] w-full max-w-[1280px] items-center justify-between gap-3 px-6 py-3 sm:min-h-[4.25rem] sm:gap-4 sm:py-4">
+        <div className="mx-auto flex min-h-16 w-full max-w-screen-xl items-center justify-between gap-3 px-6 py-3 sm:min-h-20 sm:gap-4 sm:py-4">
           <Link href="/" className="relative flex h-10 shrink-0 items-center">
             {!logoFailed ? (
               <Image
@@ -120,7 +120,7 @@ export default function Header() {
                 onError={() => setLogoFailed(true)}
               />
             ) : (
-              <span className="text-lg font-bold text-slate-900 dark:text-white">
+              <span className="text-lg font-bold text-[color:var(--color-text-title)]">
                 ALDAR
               </span>
             )}
@@ -131,7 +131,7 @@ export default function Header() {
           <div className="flex shrink-0 items-center gap-2 sm:gap-4">
             <button
               type="button"
-              className="text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white [&_svg]:pointer-events-auto"
+              className="text-[color:var(--color-text-muted)] transition-colors hover:text-[color:var(--color-text-title)] [&_svg]:pointer-events-auto"
               aria-label="Search"
             >
               <Search className="h-5 w-5" />
@@ -140,7 +140,7 @@ export default function Header() {
             <button
               type="button"
               onClick={toggleLanguage}
-              className="text-sm text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+              className="text-sm text-[color:var(--color-text-muted)] transition-colors hover:text-[color:var(--color-text-title)]"
               aria-label={`Language: ${meta.languageName}`}
             >
               {language === "en" ? "AR" : "EN"}
@@ -149,7 +149,7 @@ export default function Header() {
             <button
               type="button"
               onClick={handleThemeToggle}
-              className="text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white [&_svg]:pointer-events-auto"
+              className="text-[color:var(--color-text-muted)] transition-colors hover:text-[color:var(--color-text-title)] [&_svg]:pointer-events-auto"
               aria-label="Theme"
             >
               <ToggleIcon className="h-5 w-5" />
@@ -159,7 +159,7 @@ export default function Header() {
               asChild
               size="sm"
               variant="secondary"
-              className="hidden h-9 min-w-[132px] px-6 rounded-none bg-[color:var(--contact-button)] text-primary-foreground hover:bg-[color:var(--contact-button)]/90 sm:inline-flex"
+              className="hidden h-9 min-w-32 rounded-none bg-[color:var(--color-brand-primary-hover)] px-6 text-[color:var(--color-brand-on-primary)] hover:bg-[color:var(--color-brand-primary)] sm:inline-flex lg:min-w-36"
             >
               <Link href="/contact">{nav.contactUs}</Link>
             </Button>
@@ -170,7 +170,7 @@ export default function Header() {
                   type="button"
                   variant="ghost"
                   size="icon"
-                  className="text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white lg:hidden [&_svg]:pointer-events-auto"
+                  className="text-[color:var(--color-text-muted)] hover:bg-[color:var(--color-surface-elevated)] hover:text-[color:var(--color-text-title)] lg:hidden [&_svg]:pointer-events-auto"
                   aria-label="Open menu"
                 >
                   <Menu className="h-6 w-6" />
@@ -200,10 +200,7 @@ export default function Header() {
         </div>
       </header>
       {/* Reserve space so page content is not hidden under the fixed bar */}
-      <div
-        className="h-[4rem] shrink-0 sm:h-[4.25rem]"
-        aria-hidden
-      />
+      <div className="h-16 shrink-0 sm:h-20" aria-hidden />
     </>
   );
 }

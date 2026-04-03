@@ -31,7 +31,7 @@ export default function CallToAction({ className }: CallToActionProps) {
         }}
         aria-hidden
       />
-      <div className="relative mx-auto max-w-[1280px] px-6 text-center">
+      <div className="relative mx-auto max-w-screen-xl px-6 text-center">
         <h2 className="font-heading text-2xl font-semibold text-white sm:text-3xl md:text-4xl">
           {cta.title}
         </h2>
