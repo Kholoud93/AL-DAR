@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import "../index.css";
 import { AppProviders } from "@/components/providers";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -69,6 +70,7 @@ export default function RootLayout({
         <AppProviders>
           <Header />
           {children}
+          <Footer />
         </AppProviders>
       </body>
     </html>
