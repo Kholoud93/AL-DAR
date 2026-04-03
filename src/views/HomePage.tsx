@@ -1,23 +1,14 @@
-// Update this page (the content is just a fallback if you fail to update the page)
-
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+export default function HomePage() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="/placeholder.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="flex min-h-[calc(100vh-4.25rem)] flex-col items-center justify-center bg-background px-6 py-16 sm:min-h-[calc(100vh-4.25rem)]">
+      <div className="mx-auto max-w-2xl text-center">
+        <h1 className="font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+          ALDAR Engineering Consultants
+        </h1>
+        <p className="mt-4 text-lg text-muted-foreground">
+          Sustainable infrastructure and integrated design solutions.
+        </p>
+      </div>
+    </main>
   );
-};
-
-const HomePage = PlaceholderIndex;
-
-export default HomePage;
+}
