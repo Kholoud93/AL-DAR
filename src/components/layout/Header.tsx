@@ -26,7 +26,7 @@ const NAV_ITEMS = [
   { href: "/projects", labelKey: "projects" as const },
   { href: "/clients", labelKey: "clients" as const },
   { href: "/certificates", labelKey: "certificates" as const },
-//   { href: "/contact", labelKey: "contactUs" as const },
+  { href: "/contact", labelKey: "contactUs" as const },
 ];
 
 function NavLinks({
@@ -45,7 +45,8 @@ function NavLinks({
   return (
     <nav
       className={cn(
-        variant === "desktop" && "hidden items-center gap-8 text-sm lg:flex",
+        variant === "desktop" &&
+          "hidden min-w-0 flex-1 flex-wrap items-center justify-center gap-x-6 gap-y-1 text-sm lg:flex lg:gap-x-8",
         variant === "mobile" && "flex flex-col gap-1",
         className,
       )}
@@ -107,101 +108,108 @@ export default function Header() {
   const menuTitle = language === "ar" ? "القائمة" : "Menu";
 
   return (
-    <header
-      className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-background/95 shadow-[0_1px_0_0_rgba(0,0,0,0.04)] backdrop-blur-md transition-colors dark:border-white/10 dark:bg-card/95 dark:shadow-[0_1px_0_0_rgba(255,255,255,0.06)]"
-      dir={dir}
-    >
-      <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-4">
-        <Link href="/" className="relative flex h-10 shrink-0 items-center">
-          {!logoFailed ? (
-            <Image
-              src={logoSrc}
-              alt="ALDAR"
-              width={168}
-              height={67}
-              priority
-              className="h-9 w-auto max-w-[min(168px,45vw)] object-contain object-left"
-              onError={() => setLogoFailed(true)}
-            />
-          ) : (
-            <span className="text-lg font-bold text-slate-900 dark:text-white">
-              ALDAR
-            </span>
-          )}
-        </Link>
-
-        <NavLinks variant="desktop" nav={nav} pathname={pathname} />
-
-        <div className="flex items-center gap-4">
-          <button
-            type="button"
-            className="text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white [&_svg]:pointer-events-auto"
-            aria-label="Search"
-          >
-            <Search className="h-5 w-5" />
-          </button>
-
-          <button
-            type="button"
-            onClick={toggleLanguage}
-            className="text-sm text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
-            aria-label={`Language: ${meta.languageName}`}
-          >
-            {language === "en" ? "AR" : "EN"}
-          </button>
-
-          <button
-            type="button"
-            onClick={handleThemeToggle}
-            className="text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white [&_svg]:pointer-events-auto"
-            aria-label="Theme"
-          >
-            <ToggleIcon className="h-5 w-5" />
-          </button>
-
-          <Button
-            asChild
-            size="sm"
-            variant="secondary"
-            className="hidden bg-primary text-primary-foreground hover:bg-primary/90 sm:inline-flex"
-          >
-            <Link href="/contact">{nav.contactUs}</Link>
-          </Button>
-
-          <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-            <SheetTrigger asChild>
-              <Button
-                type="button"
-                variant="ghost"
-                size="icon"
-                className="text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white lg:hidden [&_svg]:pointer-events-auto"
-                aria-label="Open menu"
-              >
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent
-              side={dir === "rtl" ? "left" : "right"}
-              className="flex w-full flex-col gap-6 border-border bg-background text-foreground sm:max-w-sm"
-            >
-              <SheetHeader className="text-start">
-                <SheetTitle>{menuTitle}</SheetTitle>
-              </SheetHeader>
-              <NavLinks
-                variant="mobile"
-                nav={nav}
-                pathname={pathname}
-                onNavigate={() => setMobileOpen(false)}
+    <>
+      <header
+        className="fixed inset-x-0 top-0 z-50 w-full border-b border-slate-200/80 bg-background/95 shadow-[0_1px_0_0_rgba(0,0,0,0.04)] backdrop-blur-md transition-colors dark:border-white/10 dark:bg-card/95 dark:shadow-[0_1px_0_0_rgba(255,255,255,0.06)]"
+        dir={dir}
+      >
+        <div className="mx-auto flex min-h-[4rem] w-full max-w-[1280px] items-center justify-between gap-3 px-6 py-3 sm:min-h-[4.25rem] sm:gap-4 sm:py-4">
+          <Link href="/" className="relative flex h-10 shrink-0 items-center">
+            {!logoFailed ? (
+              <Image
+                src={logoSrc}
+                alt="ALDAR"
+                width={168}
+                height={67}
+                priority
+                className="h-9 w-auto max-w-[min(168px,45vw)] object-contain object-left"
+                onError={() => setLogoFailed(true)}
               />
-              <Button asChild className="w-full">
-                <Link href="/contact" onClick={() => setMobileOpen(false)}>
-                  {nav.contactUs}
-                </Link>
-              </Button>
-            </SheetContent>
-          </Sheet>
+            ) : (
+              <span className="text-lg font-bold text-slate-900 dark:text-white">
+                ALDAR
+              </span>
+            )}
+          </Link>
+
+          <NavLinks variant="desktop" nav={nav} pathname={pathname} />
+
+          <div className="flex shrink-0 items-center gap-2 sm:gap-4">
+            <button
+              type="button"
+              className="text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white [&_svg]:pointer-events-auto"
+              aria-label="Search"
+            >
+              <Search className="h-5 w-5" />
+            </button>
+
+            <button
+              type="button"
+              onClick={toggleLanguage}
+              className="text-sm text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+              aria-label={`Language: ${meta.languageName}`}
+            >
+              {language === "en" ? "AR" : "EN"}
+            </button>
+
+            <button
+              type="button"
+              onClick={handleThemeToggle}
+              className="text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white [&_svg]:pointer-events-auto"
+              aria-label="Theme"
+            >
+              <ToggleIcon className="h-5 w-5" />
+            </button>
+
+            <Button
+              asChild
+              size="sm"
+              variant="secondary"
+              className="hidden bg-primary text-primary-foreground hover:bg-primary/90 sm:inline-flex"
+            >
+              <Link href="/contact">{nav.contactUs}</Link>
+            </Button>
+
+            <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+              <SheetTrigger asChild>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  className="text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white lg:hidden [&_svg]:pointer-events-auto"
+                  aria-label="Open menu"
+                >
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent
+                side={dir === "rtl" ? "left" : "right"}
+                className="flex w-full flex-col gap-6 border-border bg-background text-foreground sm:max-w-sm"
+              >
+                <SheetHeader className="text-start">
+                  <SheetTitle>{menuTitle}</SheetTitle>
+                </SheetHeader>
+                <NavLinks
+                  variant="mobile"
+                  nav={nav}
+                  pathname={pathname}
+                  onNavigate={() => setMobileOpen(false)}
+                />
+                <Button asChild className="w-full">
+                  <Link href="/contact" onClick={() => setMobileOpen(false)}>
+                    {nav.contactUs}
+                  </Link>
+                </Button>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      {/* Reserve space so page content is not hidden under the fixed bar */}
+      <div
+        className="h-[4rem] shrink-0 sm:h-[4.25rem]"
+        aria-hidden
+      />
+    </>
   );
 }
