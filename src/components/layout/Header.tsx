@@ -180,8 +180,39 @@ export default function Header() {
                 side={dir === "rtl" ? "left" : "right"}
                 className="flex w-full flex-col gap-6 border-border bg-background text-foreground sm:max-w-sm"
               >
-                <SheetHeader className="text-start">
+                <SheetHeader className="flex flex-row items-center gap-2 text-start">
                   <SheetTitle>{menuTitle}</SheetTitle>
+                  <div className="ms-auto flex items-center gap-2">
+                    <Button
+                      type="button"
+                      size="icon"
+                      variant="outline"
+                      className="h-9 w-9 rounded-full"
+                      aria-label="Search"
+                    >
+                      <Search className="h-4 w-4" />
+                    </Button>
+                    <Button
+                      type="button"
+                      size="icon"
+                      variant="outline"
+                      onClick={toggleLanguage}
+                      className="h-9 w-9 rounded-full text-[11px] font-semibold"
+                      aria-label={`Language: ${meta.languageName}`}
+                    >
+                      {language === "en" ? "AR" : "EN"}
+                    </Button>
+                    <Button
+                      type="button"
+                      size="icon"
+                      variant="outline"
+                      onClick={handleThemeToggle}
+                      className="h-9 w-9 rounded-full"
+                      aria-label="Theme"
+                    >
+                      <ToggleIcon className="h-4 w-4" />
+                    </Button>
+                  </div>
                 </SheetHeader>
                 <NavLinks
                   variant="mobile"
