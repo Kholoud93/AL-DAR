@@ -58,7 +58,7 @@ export const homeAr: HomeTranslations = {
     },
   },
   clients: {
-    sectionLabel: "شراكات استراتيجية",
+    sectionLabel: "شركاء استراتيجيون وعملاء رئيسيون",
     title: "نتعاون مع قادة عالميين لهندسة بنية تحتية مستدامة.",
   },
   cta: {

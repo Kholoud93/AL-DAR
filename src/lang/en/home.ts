@@ -58,7 +58,7 @@ export const homeEn: HomeTranslations = {
     },
   },
   clients: {
-    sectionLabel: "Strategic Collaborations",
+    sectionLabel: "Strategic Partners & Key Clients",
     title:
       "Collaborating with global leaders to engineer sustainable infrastructure.",
   },
