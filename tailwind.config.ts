@@ -20,7 +20,9 @@ export default {
     extend: {
       fontFamily: {
         heading: ['"Plus Jakarta Sans"', "sans-serif"],
-        body: ['"Inter"', "sans-serif"],
+        body: ["var(--font-inter)", "system-ui", "sans-serif"],
+        inter: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["var(--font-manrope)", "system-ui", "sans-serif"],
       },
       colors: {
         border: "var(--border)",

@@ -17,9 +17,9 @@ export const homeEn: HomeTranslations = {
   hero: {
     title: "Sustainable Rural Sanitation Services.",
     subtitle:
-      "Pioneering impactful public infrastructure with integrated digital design and engineering excellence.",
-    primaryCta: "View Project Details",
-    secondaryCta: "Learn More",
+      "Pioneering ecological infrastructure development across regional Egypt, bringing clean water and sanitation to millions of citizens through advanced engineering.",
+    primaryCta: "View Project Detail",
+    secondaryCta: "Our Portfolio",
   },
   about: {
     sectionLabel: "About Us",
@@ -32,28 +32,33 @@ export const homeEn: HomeTranslations = {
     },
   },
   services: {
-    sectionLabel: "Our Services",
+    sectionLabel: "Our Expertise",
     title: "Integrated Design Solutions",
     description:
-      "We provide end-to-end engineering and project delivery services across critical infrastructure sectors.",
+      "Providing end-to-end consulting services from feasibility studies to project commissioning and asset management.",
     items: {
       constructionManagement: "Construction Management",
       structuralEngineering: "Structural Engineering",
       urbanPlanningAndDesign: "Urban Planning & Design",
+    },
+    itemTags: {
+      constructionManagement: "Technical service",
+      structuralEngineering: "Structural design",
+      urbanPlanningAndDesign: "Sustainable development",
     },
   },
   certificates: {
     sectionLabel: "Recognitions and Qualifications",
     title: "Accreditations & Certificates",
     items: {
-      iso9001: "ISO 9001",
-      iso14001: "ISO 14001",
-      iso45001: "ISO 45001",
-      engineeringExcellence: "Engineering Excellence",
+      iso9001: "ISO 9001:2015",
+      iso14001: "ISO 14001:2015",
+      iso45001: "ISO 45001:2018",
+      engineeringExcellence: "Eng. Excellence",
     },
   },
   clients: {
-    sectionLabel: "Strategic Collaborations",
+    sectionLabel: "Strategic Partners & Key Clients",
     title:
       "Collaborating with global leaders to engineer sustainable infrastructure.",
   },

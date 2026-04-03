@@ -32,28 +32,33 @@ export const homeAr: HomeTranslations = {
     },
   },
   services: {
-    sectionLabel: "خدماتنا",
+    sectionLabel: "خبراتنا",
     title: "حلول تصميم متكاملة",
     description:
-      "نقدم خدمات هندسية متكاملة وتسليم مشاريع شامل عبر قطاعات البنية التحتية الحيوية.",
+      "نقدم استشارات شاملة من دراسات الجدوى إلى تشغيل المشروع وإدارة الأصول.",
     items: {
       constructionManagement: "إدارة البناء",
       structuralEngineering: "الهندسة الإنشائية",
       urbanPlanningAndDesign: "التخطيط العمراني والتصميم",
+    },
+    itemTags: {
+      constructionManagement: "خدمة تقنية",
+      structuralEngineering: "تصميم إنشائي",
+      urbanPlanningAndDesign: "تنمية مستدامة",
     },
   },
   certificates: {
     sectionLabel: "الاعترافات والتأهيلات",
     title: "الاعتمادات والشهادات",
     items: {
-      iso9001: "ISO 9001",
-      iso14001: "ISO 14001",
-      iso45001: "ISO 45001",
+      iso9001: "ISO 9001:2015",
+      iso14001: "ISO 14001:2015",
+      iso45001: "ISO 45001:2018",
       engineeringExcellence: "التميّز الهندسي",
     },
   },
   clients: {
-    sectionLabel: "شراكات استراتيجية",
+    sectionLabel: "شركاء استراتيجيون وعملاء رئيسيون",
     title: "نتعاون مع قادة عالميين لهندسة بنية تحتية مستدامة.",
   },
   cta: {

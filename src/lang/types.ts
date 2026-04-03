@@ -37,6 +37,11 @@ export interface HomeTranslations {
       structuralEngineering: string;
       urbanPlanningAndDesign: string;
     };
+    itemTags: {
+      constructionManagement: string;
+      structuralEngineering: string;
+      urbanPlanningAndDesign: string;
+    };
   };
   certificates: {
     sectionLabel: string;

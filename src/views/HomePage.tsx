@@ -1,23 +1,19 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import AboutStats from "@/components/sections/AboutStats";
+import CallToAction from "@/components/sections/CallToAction";
+import Certificates from "@/components/sections/Certificates";
+import ClientsPartners from "@/components/sections/ClientsPartners";
+import HeroSlider from "@/components/sections/HeroSlider";
+import ServicesCarousel from "@/components/sections/ServicesCarousel";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+export default function HomePage() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="/placeholder.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="flex w-full min-h-[calc(100vh-4.25rem)] flex-col bg-background">
+      <HeroSlider />
+      <AboutStats />
+      <ServicesCarousel />
+      <Certificates />
+      <ClientsPartners />
+      <CallToAction />
+    </main>
   );
-};
-
-const HomePage = PlaceholderIndex;
-
-export default HomePage;
+}

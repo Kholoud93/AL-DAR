@@ -24,3 +24,6 @@ out
 *.njsproj
 *.sln
 *.sw?
+
+# Cursor config (agents, skills, etc.)
+.cursor/
