@@ -18,8 +18,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 const siteDescription =
   "ALDAR Engineering Consultants — sustainable infrastructure and integrated design solutions.";
@@ -66,7 +65,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${manrope.variable} ${inter.variable} font-sans antialiased`}>
+      <body
+        className={`${manrope.variable} ${inter.variable} font-sans antialiased`}
+      >
         <AppProviders>
           <Header />
           {children}
