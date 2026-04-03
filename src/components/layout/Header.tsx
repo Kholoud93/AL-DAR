@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, Search } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import useTheme from "@/hooks/useTheme";
 import {
@@ -17,7 +17,7 @@ import {
 import { useLanguage } from "@/hooks/useLanguage";
 import type { HomeTranslations } from "@/lang/types";
 import { cn } from "@/lib/utils";
-import logoSrc from "@/assets/landingimgs/ALDAR-Logo.png";
+import logoSrc from "@/assets/landing-imgs/ALDAR-Logo.png";
 
 const NAV_ITEMS = [
   { href: "/", labelKey: "home" as const },
@@ -26,7 +26,6 @@ const NAV_ITEMS = [
   { href: "/projects", labelKey: "projects" as const },
   { href: "/clients", labelKey: "clients" as const },
   { href: "/certificates", labelKey: "certificates" as const },
-  { href: "/contact", labelKey: "contactUs" as const },
 ];
 
 function NavLinks({
@@ -71,10 +70,10 @@ function NavLinks({
                 "rounded-md px-3 py-3 text-base text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white",
               isActive &&
                 variant === "desktop" &&
-                "font-semibold text-primary underline decoration-primary/70 underline-offset-[5px] hover:text-primary dark:text-primary dark:decoration-primary/80 dark:hover:text-primary",
+                "font-semibold text-[color:var(--contact-button)] underline decoration-[color:var(--contact-button)]/70 underline-offset-[5px] hover:text-[color:var(--contact-button)] dark:text-[color:var(--contact-button)] dark:decoration-[color:var(--contact-button)]/80 dark:hover:text-[color:var(--contact-button)]",
               isActive &&
                 variant === "mobile" &&
-                "font-semibold text-primary underline decoration-primary/70 underline-offset-[5px] dark:text-primary dark:decoration-primary/80",
+                "font-semibold text-[color:var(--contact-button)] underline decoration-[color:var(--contact-button)]/70 underline-offset-[5px] dark:text-[color:var(--contact-button)] dark:decoration-[color:var(--contact-button)]/80",
             )}
           >
             {label}
@@ -99,11 +98,6 @@ export default function Header() {
   const meta = translations.home.meta;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [logoFailed, setLogoFailed] = useState(false);
-
-  useEffect(() => {
-    document.documentElement.lang = language;
-    document.documentElement.dir = meta.dir;
-  }, [language, meta.dir]);
 
   const menuTitle = language === "ar" ? "القائمة" : "Menu";
 
@@ -165,7 +159,7 @@ export default function Header() {
               asChild
               size="sm"
               variant="secondary"
-              className="hidden bg-primary text-primary-foreground hover:bg-primary/90 sm:inline-flex"
+              className="hidden h-9 min-w-[132px] px-6 rounded-none bg-[color:var(--contact-button)] text-primary-foreground hover:bg-[color:var(--contact-button)]/90 sm:inline-flex"
             >
               <Link href="/contact">{nav.contactUs}</Link>
             </Button>
