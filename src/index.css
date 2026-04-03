@@ -71,7 +71,7 @@
       rgba(27, 20, 100, 0.96) 100%
     );
     --contact-button: var(--color-brand-primary-hover);
-   
+
     --service-label: var(--color-text-label);
     --service-title: var(--color-text-primary);
     --service-description: var(--color-text-secondary);
@@ -80,7 +80,7 @@
     --certificate-card-border: var(--color-border-subtle);
     --certificate-icon-bg: var(--color-surface-elevated);
     --certificate-subtitle: var(--color-text-muted);
-  
+
     --service-tag: #d3daea;
     --service-card-title: #ffffff;
     --service-card-tag: rgba(165, 180, 252, 1);
