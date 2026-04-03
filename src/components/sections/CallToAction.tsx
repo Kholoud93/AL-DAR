@@ -19,7 +19,7 @@ export default function CallToAction({ className }: CallToActionProps) {
     <section
       dir={dir}
       className={cn(
-        "relative overflow-hidden bg-gradient-to-r from-aldar-navy via-[#152a8a] to-aldar-navy py-16 sm:py-20",
+        "relative overflow-hidden bg-gradient-to-r from-aldar-navy via-[#23246f] to-aldar-navy py-20 sm:py-24 lg:py-28",
         className,
       )}
     >
@@ -32,16 +32,16 @@ export default function CallToAction({ className }: CallToActionProps) {
         aria-hidden
       />
       <div className="relative mx-auto max-w-screen-xl px-6 text-center">
-        <h2 className="font-heading text-2xl font-semibold text-white sm:text-3xl md:text-4xl">
+        <h2 className="mx-auto max-w-4xl font-sans text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
           {cta.title}
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-base text-white/85">
+        <p className="mx-auto mt-7 max-w-2xl font-inter text-base text-white/45 sm:text-lg">
           {cta.subtitle}
         </p>
         <Button
           asChild
           size="lg"
-          className="mt-10 gap-2 bg-white px-8 text-aldar-navy hover:bg-white/90"
+          className="mt-11 h-14 rounded-none bg-white px-10 font-inter text-sm font-semibold uppercase tracking-[0.16em] text-aldar-navy hover:bg-white/90"
         >
           <Link href="/contact">
             {cta.button}
