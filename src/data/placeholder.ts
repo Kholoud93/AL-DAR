@@ -1,4 +1,3 @@
-// Placeholder data for development — replace with real content / API
 import type { StatItem, Service } from "@/types";
 
 export const stats: StatItem[] = [

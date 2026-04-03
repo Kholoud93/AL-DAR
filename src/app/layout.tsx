@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "../index.css";
 import { AppProviders } from "@/components/providers";
+import Header from "@/components/layout/Header";
 
 export const metadata: Metadata = {
   title: "ALDAR",
@@ -14,9 +15,12 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <AppProviders>{children}</AppProviders>
+        <AppProviders>
+          <Header />
+          {children}
+        </AppProviders>
       </body>
     </html>
   );

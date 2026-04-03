@@ -70,7 +70,6 @@ export const homeEn: HomeTranslations = {
       resources: "Resources",
       contact: "Contact",
     },
-    copyright:
-      "ALDAR Engineering Consultants. All rights reserved.",
+    copyright: "ALDAR Engineering Consultants. All rights reserved.",
   },
 };

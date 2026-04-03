@@ -69,7 +69,6 @@ export const homeAr: HomeTranslations = {
       resources: "الموارد",
       contact: "التواصل",
     },
-    copyright:
-      "الدار للاستشارات الهندسية. جميع الحقوق محفوظة.",
+    copyright: "الدار للاستشارات الهندسية. جميع الحقوق محفوظة.",
   },
 };
