@@ -13,7 +13,7 @@ export interface HomeTranslations {
     contactUs: string;
   };
   hero: {
-    items:{title: string;subtitle: string;}[];
+    items: { title: string; subtitle: string }[];
     primaryCta: string;
     secondaryCta: string;
   };

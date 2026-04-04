@@ -38,8 +38,8 @@ export default {
           DEFAULT: "var(--secondary)",
           foreground: "var(--secondary-foreground)",
         },
-        view:{
-  DEFAULT: "rgb(var(--view)/<alpha-value>)",
+        view: {
+          DEFAULT: "rgb(var(--view)/<alpha-value>)",
           foreground: "rgb(var(--view-foreground)/<alpha-value>)",
         },
         destructive: {

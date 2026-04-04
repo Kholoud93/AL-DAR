@@ -13,8 +13,8 @@
     --popover: #ffffff;
     --popover-foreground: #0a0f29;
 
-    --primary:27 20 100; /* = #1b1464 */
-     --primary-foreground:255 255 255;/* = #ffffff */
+    --primary: 27 20 100; /* = #1b1464 */
+    --primary-foreground: 255 255 255; /* = #ffffff */
 
     --secondary: #f0f2f7;
     --secondary-foreground: #1b1464;
@@ -28,7 +28,7 @@
     --destructive: #e53e3e;
     --destructive-foreground: #ffffff;
 
-    --view: 79 70 229;/* #4F46E5*/
+    --view: 79 70 229; /* #4F46E5*/
     --view-foreground: 255 255 255;
 
     --border: #dbe1eb;
@@ -36,8 +36,6 @@
     --ring: #1b1464;
 
     --radius: 0.5rem;
-
- 
 
     /* Semantic design tokens */
     --color-brand-primary: #1b1464;
@@ -110,8 +108,8 @@
     --popover: #0d1326;
     --popover-foreground: #f2f2f2;
 
-  --primary: 45 91 255; /*= #2d5bff*/
-    --primary-foreground: 255 255 255;/* = #ffffff */
+    --primary: 45 91 255; /*= #2d5bff*/
+    --primary-foreground: 255 255 255; /* = #ffffff */
 
     --secondary: #151d32;
     --secondary-foreground: #f2f2f2;
@@ -124,14 +122,13 @@
 
     --destructive: #7c1d1d;
     --destructive-foreground: #f2f2f2;
-    
+
     --view: 99 102 241; /*#6366 */
     --view-foreground: 255 255 255;
-    
+
     --border: #1b243d;
     --input: #1b243d;
     --ring: #2d5bff;
-
 
     /* Semantic design tokens (dark) */
     --color-brand-primary: #5f86ff;
