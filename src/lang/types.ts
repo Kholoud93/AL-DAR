@@ -21,11 +21,18 @@ export interface HomeTranslations {
   about: {
     sectionLabel: string;
     title: string;
+    description:string;
     stats: {
+      numYears: string;
+      numProjects: string;
+      numHours: string;
+      numMembers: string;
+      certificate: string;
       years: string;
       globalProjects: string;
       workHours: string;
       staffMembers: string;
+      certifiedQuality: string;
     };
   };
   services: {

@@ -58,6 +58,18 @@ export default {
           DEFAULT: "var(--card)",
           foreground: "var(--card-foreground)",
         },
+        icon: {
+          DEFAULT: "var(--icon)",
+          foreground: "var(--icon-foreground)",
+        },
+        cardPrimary: {
+          DEFAULT: "var(--card-primary)",
+          foreground: "var(--card-primary-foreground)",
+        },
+        note: {
+          DEFAULT: "var(--note)",
+          foreground: "var(--note-foreground)",
+        },
         aldar: {
           navy: "var(--aldar-navy)",
           blue: "var(--aldar-blue)",

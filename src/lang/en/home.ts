@@ -22,13 +22,23 @@ export const homeEn: HomeTranslations = {
     secondaryCta: "Our Portfolio",
   },
   about: {
-    sectionLabel: "About Us",
-    title: "Mastering the forces of nature through precision.",
+    sectionLabel: "Institutional Excellence",
+    title: "Mastering the forces of nature through precision",
+    description:"At ALDAR, we architect the backbone of modern society. Our"+
+            "approach merges rigorous technical analysis with an artistic"+
+            "vision for structural permanence, ensuring every landmark"+
+            "infrastructure project stands the test of time.",
     stats: {
+      numYears:"30+",
+      numProjects:"500+",
+      numHours:"1M+",
+      numMembers:"165+",
+      certificate:"ISO",
       years: "Years of Engineering Heritage",
       globalProjects: "Global Projects",
       workHours: "Work Hours",
       staffMembers: "Staff Members",
+      certifiedQuality:"Certified Quality"
     },
   },
   services: {

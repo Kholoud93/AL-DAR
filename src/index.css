@@ -34,6 +34,16 @@
 
     --radius: 0.5rem;
 
+    --icon: #eef2ff;
+    --icon-foreground: var(--color-text-title);
+
+    --card-primary: var(--color-text-title);
+    --card-primary-foreground: #FFFFFF;
+
+    --note:#EEF2FF;
+    --note-foreground:var(--color-text-label);
+    --note-border:#E0E7FF;
+
     /* Semantic design tokens */
     --color-brand-primary: #1b1464;
     --color-brand-primary-hover: #312e81;
@@ -123,6 +133,19 @@
     --border: #1b243d;
     --input: #1b243d;
     --ring: #2d5bff;
+
+    
+    --icon: var(--color-surface-elevated);
+    --icon-foreground: var(--color-text-label);
+    /* --icon-foreground: #eef2ff; */
+    
+    --card-primary:var(--color-text-label) ;
+    --card-primary-foreground:#eef2ff;
+
+    --note:var(--color-surface-elevated);
+    --note-foreground:var(--color-text-label);
+    --note-border:#E0E7FF;
+
     /* Semantic design tokens (dark) */
     --color-brand-primary: #5f86ff;
     --color-brand-primary-hover: #7a9cff;

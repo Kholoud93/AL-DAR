@@ -22,13 +22,22 @@ export const homeAr: HomeTranslations = {
     secondaryCta: "اعرف المزيد",
   },
   about: {
-    sectionLabel: "من نحن",
-    title: "إتقان قوى الطبيعة بدقة عالية.",
+    sectionLabel:" التميز المؤسسي",
+    title: "إتقان قوى الطبيعة بدقة عالية",
+   description: "نحن في 'الدار' نصمم الركائز الأساسية للمجتمعات الحديثة. " +
+             "يجمع نهجنا بين التحليل الفني الدقيق والرؤية الفنية للاستدامة الإنشائية، " +
+             "بما يضمن صمود كل مشروع من مشاريع البنية التحتية العملاقة أمام اختبار الزمن.",
     stats: {
-      years: "سنوات من الخبرة الهندسية",
+      numYears: "+٣٠",
+      numProjects: "+٥٠٠",
+      numHours: "+١ مليون",
+      numMembers: "+١٦٥",
+      certificate: "ISO",
+      years: "عقود من الإرث الهندسي",
       globalProjects: "مشاريع عالمية",
       workHours: "ساعات عمل",
-      staffMembers: "أعضاء الفريق",
+      staffMembers: "موظفاً وخبيراً",
+      certifiedQuality: "جودة معتمدة",
     },
   },
   services: {
