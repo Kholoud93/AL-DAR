@@ -106,7 +106,7 @@ export default function HeroSlider() {
           ))}
         </CarouselContent>
 
-        <div className="absolute bottom-3 md:bottom-8 left-10 z-30 w-[90%] flex justify-center md:justify-end gap-2">
+        <div className="absolute bottom-3 md:bottom-8 left-0 md:left-10 z-30 w-[90%] flex justify-center md:justify-end gap-2">
           {Array.from({ length: count }).map((_, i) => (
             <button
               key={i}
