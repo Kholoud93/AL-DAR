@@ -31,12 +31,16 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: {
-          DEFAULT: "var(--primary)",
-          foreground: "var(--primary-foreground)",
+          DEFAULT: "rgb(var(--primary) / <alpha-value>)",
+          foreground: "rgb(var(--primary-foreground) / <alpha-value>)",
         },
         secondary: {
           DEFAULT: "var(--secondary)",
           foreground: "var(--secondary-foreground)",
+        },
+        view: {
+          DEFAULT: "rgb(var(--view)/<alpha-value>)",
+          foreground: "rgb(var(--view-foreground)/<alpha-value>)",
         },
         destructive: {
           DEFAULT: "var(--destructive)",
