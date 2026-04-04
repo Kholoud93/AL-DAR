@@ -8,7 +8,7 @@ export default function AboutStats() {
   const { translations, dir } = useLanguage();
   const { about } = translations.home;
   return (
-    <section dir={dir} className="w-[80%] md:w-[90%] m-auto border-b border-border bg-background py-12" >
+    <section dir={dir} className="w-[80%] md:w-[90%] m-auto border-b border-border bg-background py-20" >
       <div className="flex flex-col md:flex-row">
 
         <div className="w-full md:w-1/2 text-center">
