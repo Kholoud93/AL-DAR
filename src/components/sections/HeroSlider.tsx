@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import Autoplay from "embla-carousel-autoplay"; // 1. استيراد الإضافة
+import Autoplay from "embla-carousel-autoplay";
 import Container from "@/assets/landing-imgs/heroSectionImage.jpg";
 import { Button } from "@/components/ui/button";
 import {
@@ -63,7 +63,7 @@ export default function HeroSlider() {
       >
         <CarouselContent className="ml-0 min-h-[calc(100vh-80px)]">
           {SLIDES.map((slide, index) => (
-            <CarouselItem key={index} className="pl-0 relative overflow-hidden">
+            <CarouselItem key={index} className="!ps-0 pl-0 relative overflow-hidden">
               <div
                 className="w-full h-full bg-cover bg-center"
                 style={{ backgroundImage: `url(${slide.image})` }}
@@ -81,10 +81,10 @@ export default function HeroSlider() {
                       <h2 className="font-bold text-[40px] md:text-[72px] leading-tight whitespace-pre-line">
                         {heroText.items[index].title}
                       </h2>
-                      <p className="text-xl font-medium opacity-90 max-w-[550px]">
+                      <p className="text-xl line-clamp-4 overflow-hidden font-medium opacity-90 max-w-[550px]">
                         {heroText.items[index].subtitle}
                       </p>
-                      <div className="flex gap-4 mt-4">
+                      <div className="flex flex-wrap gap-4 mt-4">
                         <Button
                           variant="secondary"
                           className="h-12 md:h-14 px-8 text-base font-bold rounded-none"
