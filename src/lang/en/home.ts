@@ -15,9 +15,14 @@ export const homeEn: HomeTranslations = {
     contactUs: "Contact Us",
   },
   hero: {
-    title: "Sustainable Rural Sanitation Services.",
-    subtitle:
-      "Pioneering ecological infrastructure development across regional Egypt, bringing clean water and sanitation to millions of citizens through advanced engineering.",
+    items: [{  
+       title: "Sustainable Rural Sanitation Services.",
+     subtitle:"Pioneering ecological infrastructure development across regional Egypt,bringing clean water and sanitation to millions of citizens through advanced engineering."
+    },{  
+       title: "Innovative Engineering for the Future.",
+     subtitle:"Bringing clean water and sanitation to over 5 million citizens."
+    }],
+
     primaryCta: "View Project Detail",
     secondaryCta: "Our Portfolio",
   },
