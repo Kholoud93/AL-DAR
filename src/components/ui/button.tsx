@@ -17,6 +17,7 @@ const buttonVariants = cva(
         secondary: "bg-view text-view-foreground hover:bg-view/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        gradient: "text-white font-semibold shadow-md border-0" // gradient handled inline
       },
       size: {
         default: "h-10 px-4 py-2",
@@ -42,10 +43,19 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
+    // If gradient variant, use sidebar gradient
+    const isGradient = variant === "gradient";
+    const gradientStyle = isGradient
+      ? {
+          background:
+            "linear-gradient(135deg, var(--aldar-navy), var(--aldar-blue), var(--aldar-cyan))",
+        }
+      : undefined;
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
+        style={isGradient ? { ...gradientStyle, ...props.style } : props.style}
         {...props}
       />
     );

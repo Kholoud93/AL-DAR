@@ -82,6 +82,24 @@ export default {
           light: "var(--aldar-light)",
           gold: "var(--aldar-gold)",
         },
+        success: {
+          DEFAULT: "hsl(var(--success) / <alpha-value>)",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning) / <alpha-value>)",
+        },
+        info: {
+          DEFAULT: "hsl(var(--info) / <alpha-value>)",
+        },
+        dash: {
+          sidebar: {
+            bg: "hsl(var(--dash-sidebar-bg) / <alpha-value>)",
+            fg: "hsl(var(--dash-sidebar-fg) / <alpha-value>)",
+            active: "hsl(var(--dash-sidebar-active) / <alpha-value>)",
+            hover: "hsl(var(--dash-sidebar-hover) / <alpha-value>)",
+            border: "hsl(var(--dash-sidebar-border) / <alpha-value>)",
+          },
+        },
         sidebar: {
           DEFAULT: "var(--sidebar-background)",
           foreground: "var(--sidebar-foreground)",
@@ -115,12 +133,17 @@ export default {
           from: { opacity: "0", transform: "translateY(10px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        "fade-in": {
+          from: { opacity: "0", transform: "translateY(8px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "scroll-left": "scroll-left 30s linear infinite",
         "count-up": "count-up 0.6s ease-out forwards",
+        "fade-in": "fade-in 0.3s ease-out",
       },
     },
   },

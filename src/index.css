@@ -106,6 +106,16 @@
     --sidebar-accent-foreground: #18181b;
     --sidebar-border: #e5e7eb;
     --sidebar-ring: #3b82f6;
+
+    /* Dashboard admin UI (HSL triplets for Tailwind alpha) */
+    --info: 200 80% 45%;
+    --success: 142 60% 40%;
+    --warning: 38 92% 48%;
+    --dash-sidebar-bg: 233 47% 16%;
+    --dash-sidebar-fg: 220 15% 88%;
+    --dash-sidebar-active: 43 74% 52%;
+    --dash-sidebar-hover: 233 35% 22%;
+    --dash-sidebar-border: 233 28% 26%;
   }
 
   .dark {
@@ -155,7 +165,7 @@
     /* Semantic design tokens (dark) */
     --color-brand-primary: #5f86ff;
     --color-brand-primary-hover: #7a9cff;
-    --color-brand-on-primary: #ffffff;
+    --color-brand-on-primary: #181a20;
     --color-text-label: #5f86ff;
     --color-text-title: #e8edff;
     --color-text-description: #a3afc3;
@@ -200,6 +210,15 @@
     --sidebar-accent-foreground: #f4f4f5;
     --sidebar-border: #27272a;
     --sidebar-ring: #3b82f6;
+
+    --info: 200 75% 55%;
+    --success: 142 55% 48%;
+    --warning: 38 88% 55%;
+    --dash-sidebar-bg: 233 40% 12%;
+    --dash-sidebar-fg: 220 15% 90%;
+    --dash-sidebar-active: 43 74% 55%;
+    --dash-sidebar-hover: 233 32% 20%;
+    --dash-sidebar-border: 233 25% 24%;
   }
 }
 
