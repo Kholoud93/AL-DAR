@@ -10,7 +10,7 @@ const Table = React.forwardRef<
     <table
       ref={ref}
       className={cn(
-        "w-full caption-bottom bg-background text-[15px] leading-normal antialiased",
+        "w-full caption-bottom bg-background text-sm leading-snug antialiased [-webkit-font-smoothing:antialiased]",
         className,
       )}
       {...props}
@@ -76,7 +76,7 @@ const TableHead = React.forwardRef<
   <th
     ref={ref}
     className={cn(
-      "h-11 px-3 text-left align-middle text-[13px] font-semibold tracking-tight text-muted-foreground sm:h-12 sm:px-4 sm:text-sm [&:has([role=checkbox])]:pr-0",
+      "h-10 whitespace-nowrap px-3 text-left align-middle text-xs font-semibold tracking-wide text-muted-foreground sm:h-11 sm:px-4 sm:text-[11px] [&:has([role=checkbox])]:pr-0",
       className,
     )}
     {...props}
@@ -91,7 +91,7 @@ const TableCell = React.forwardRef<
   <td
     ref={ref}
     className={cn(
-      "p-3 align-middle sm:p-4 [&:has([role=checkbox])]:pr-0",
+      "p-2.5 align-middle text-sm leading-snug text-foreground whitespace-nowrap sm:p-3.5 [&:has([role=checkbox])]:pr-0",
       className,
     )}
     {...props}
@@ -105,7 +105,7 @@ const TableCaption = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <caption
     ref={ref}
-    className={cn("mt-4 text-sm text-muted-foreground", className)}
+    className={cn("mt-4 text-xs text-muted-foreground", className)}
     {...props}
   />
 ));

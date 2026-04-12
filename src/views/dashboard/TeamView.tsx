@@ -241,11 +241,11 @@ export default function TeamView() {
                     <span className="font-medium">{m.fullName}</span>
                   </div>
                 </TableCell>
-                <TableCell className="text-sm">{m.position}</TableCell>
-                <TableCell className="text-sm text-muted-foreground">
+                <TableCell>{m.position}</TableCell>
+                <TableCell className="text-muted-foreground">
                   {m.specialization}
                 </TableCell>
-                <TableCell className="text-sm text-muted-foreground">
+                <TableCell className="text-muted-foreground">
                   {m.createdAt}
                 </TableCell>
                 <TableCell className="text-right">

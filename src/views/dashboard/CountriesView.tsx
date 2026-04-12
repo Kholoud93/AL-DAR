@@ -240,7 +240,7 @@ export default function CountriesView() {
                     {c.code}
                   </Badge>
                 </TableCell>
-                <TableCell className="text-sm text-muted-foreground">
+                <TableCell className="text-muted-foreground">
                   {c.updatedAt}
                 </TableCell>
                 <TableCell className="text-right">

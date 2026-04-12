@@ -237,10 +237,10 @@ export default function ClientsView() {
                     <span className="font-medium">{c.name}</span>
                   </div>
                 </TableCell>
-                <TableCell className="text-sm text-muted-foreground">
+                <TableCell className="text-muted-foreground">
                   {c.createdAt}
                 </TableCell>
-                <TableCell className="text-sm text-muted-foreground">
+                <TableCell className="text-muted-foreground">
                   {c.updatedAt}
                 </TableCell>
                 <TableCell className="text-right">

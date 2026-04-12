@@ -59,6 +59,10 @@ const statusColors: Record<string, string> = {
   "On Hold": "bg-warning/15 text-warning border-warning/30",
 };
 
+/** Matches table body text scale (compact pill in cells) */
+const statusBadgeTable =
+  "px-2 py-0.5 text-[11px] font-medium leading-tight border";
+
 export default function ProjectsView() {
   const [projects, setProjects] = useState<Project[]>(mockProjects);
   const [countries, setCountries] = useState(mockCountries);
@@ -328,12 +332,12 @@ export default function ProjectsView() {
                     const co = countries.find((c) => c.id === p.countryId);
                     if (!co) {
                       return (
-                        <span className="text-sm text-muted-foreground">—</span>
+                        <span className="text-muted-foreground">—</span>
                       );
                     }
                     return (
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-sm">{co.name}</span>
+                      <div className="flex flex-nowrap items-center gap-2">
+                        <span>{co.name}</span>
                         <Badge
                           variant="outline"
                           className="font-mono text-[10px] font-semibold uppercase tracking-wide"
@@ -345,12 +349,16 @@ export default function ProjectsView() {
                   })()}
                 </TableCell>
                 <TableCell>
-                  <Badge className={statusColors[p.status]}>{p.status}</Badge>
+                  <Badge
+                    className={`${statusColors[p.status]} ${statusBadgeTable}`}
+                  >
+                    {p.status}
+                  </Badge>
                 </TableCell>
-                <TableCell className="text-sm text-muted-foreground">
+                <TableCell className="text-muted-foreground">
                   {p.createdAt}
                 </TableCell>
-                <TableCell className="text-sm text-muted-foreground">
+                <TableCell className="text-muted-foreground">
                   {p.updatedAt}
                 </TableCell>
                 <TableCell className="text-right">

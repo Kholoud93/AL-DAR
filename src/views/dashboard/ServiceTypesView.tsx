@@ -217,10 +217,10 @@ export default function ServiceTypesView() {
                     {getFieldName(t.serviceFieldId)}
                   </Badge>
                 </TableCell>
-                <TableCell className="text-sm text-muted-foreground">
+                <TableCell className="text-muted-foreground">
                   {t.createdAt}
                 </TableCell>
-                <TableCell className="text-sm text-muted-foreground">
+                <TableCell className="text-muted-foreground">
                   {t.updatedAt}
                 </TableCell>
                 <TableCell className="text-right">

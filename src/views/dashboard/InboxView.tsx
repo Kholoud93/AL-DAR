@@ -176,7 +176,7 @@ export default function InboxView() {
               <TableRow>
                 <TableCell
                   colSpan={5}
-                  className="h-32 text-center text-sm text-muted-foreground"
+                  className="h-32 whitespace-normal text-center text-muted-foreground"
                 >
                   {messages.length === 0
                     ? "No messages in your inbox."
@@ -209,11 +209,13 @@ export default function InboxView() {
                     {m.senderName}
                   </TableCell>
                   <TableCell
-                    className={`text-sm ${!m.isRead ? "font-semibold" : "text-muted-foreground"}`}
+                    className={
+                      !m.isRead ? "font-semibold" : "text-muted-foreground"
+                    }
                   >
                     {m.subject}
                   </TableCell>
-                  <TableCell className="text-sm text-muted-foreground">
+                  <TableCell className="text-muted-foreground">
                     {m.receivedAt}
                   </TableCell>
                   <TableCell className="text-right">

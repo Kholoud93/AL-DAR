@@ -199,10 +199,10 @@ export default function ServiceFieldsView() {
                 onClick={() => setViewField(f)}
               >
                 <TableCell className="font-medium">{f.name}</TableCell>
-                <TableCell className="text-sm text-muted-foreground">
+                <TableCell className="text-muted-foreground">
                   {f.createdAt}
                 </TableCell>
-                <TableCell className="text-sm text-muted-foreground">
+                <TableCell className="text-muted-foreground">
                   {f.updatedAt}
                 </TableCell>
                 <TableCell className="text-right">
