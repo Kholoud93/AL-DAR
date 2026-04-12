@@ -122,21 +122,21 @@ export default function ProfileView() {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="min-w-0 space-y-6 md:space-y-6">
       <PageHeader
         title="Profile"
         description="Your account details and security preferences"
       />
 
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,280px)_1fr]">
-        <Card className="h-fit border-border/80 bg-background shadow-sm">
-          <CardHeader className="text-center">
-            <div className="mx-auto flex flex-col items-center gap-4">
-              <Avatar className="h-28 w-28 border-2 border-border text-2xl">
+      <div className="grid min-w-0 gap-6 md:gap-5 lg:grid-cols-[minmax(0,260px)_1fr]">
+        <Card className="h-fit min-w-0 border-border/80 bg-background shadow-sm">
+          <CardHeader className="text-center md:py-4">
+            <div className="mx-auto flex flex-col items-center gap-4 md:gap-3">
+              <Avatar className="h-28 w-28 border-2 border-border text-2xl md:h-24 md:w-24 md:text-xl">
                 {avatarDataUrl ? (
                   <AvatarImage src={avatarDataUrl} alt="" />
                 ) : null}
-                <AvatarFallback className="bg-muted font-heading text-2xl font-semibold">
+                <AvatarFallback className="bg-muted font-heading text-2xl font-semibold md:text-xl">
                   {initialsFromName(fullName)}
                 </AvatarFallback>
               </Avatar>

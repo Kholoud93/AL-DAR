@@ -100,14 +100,14 @@ export default function InboxView() {
         description={`${messages.length} message${messages.length !== 1 ? "s" : ""} · ${unreadCount} unread`}
       />
 
-      <Card className="overflow-hidden border-border/80 bg-background shadow-sm">
-        <div className="flex flex-col gap-4 border-b p-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+      <Card className="min-w-0 overflow-hidden border-border/80 bg-background shadow-sm">
+        <div className="flex flex-col gap-4 border-b p-4 md:flex-row md:flex-wrap md:items-center md:justify-between">
           <Tabs
             value={filter}
             onValueChange={(v) => setFilter(v as InboxFilter)}
-            className="w-full sm:w-auto"
+            className="w-full md:w-auto"
           >
-            <TabsList className="grid h-auto w-full grid-cols-3 sm:inline-flex sm:w-auto">
+            <TabsList className="grid h-auto w-full grid-cols-3 md:inline-flex md:w-auto">
               <TabsTrigger value="all" className="gap-1.5 px-3">
                 All
                 <span className="text-xs text-muted-foreground tabular-nums">
@@ -161,7 +161,7 @@ export default function InboxView() {
           </div>
         </div>
 
-        <Table className="bg-background">
+        <Table className="bg-background text-sm md:text-xs">
           <TableHeader>
             <TableRow>
               <TableHead className="w-10" />
