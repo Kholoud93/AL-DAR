@@ -210,7 +210,12 @@ export default function ServiceTypesView() {
               >
                 <TableCell className="font-medium">{t.name}</TableCell>
                 <TableCell>
-                  <Badge variant="secondary">{getFieldName(t.serviceFieldId)}</Badge>
+                  <Badge
+                    variant="secondary"
+                    className="text-[13px] font-medium leading-tight"
+                  >
+                    {getFieldName(t.serviceFieldId)}
+                  </Badge>
                 </TableCell>
                 <TableCell className="text-sm text-muted-foreground">
                   {t.createdAt}
