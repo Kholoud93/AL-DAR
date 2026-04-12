@@ -100,10 +100,10 @@ export default function ServiceTypesView() {
         >
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Service Types
         </Button>
-        <Card className="p-6 md:p-5">
+        <Card className="p-6">
           <div className="space-y-6">
             <div>
-              <h2 className="font-heading text-2xl font-bold md:text-xl">
+              <h2 className="font-heading text-2xl font-bold">
                 {viewType.name}
               </h2>
               <p className="mt-1 text-sm text-muted-foreground">
@@ -190,8 +190,8 @@ export default function ServiceTypesView() {
           </Button>
         }
       />
-      <Card className="min-w-0 overflow-x-auto bg-background">
-        <Table className="bg-background text-sm md:text-xs">
+      <Card className="bg-background">
+        <Table className="bg-background">
           <TableHeader>
             <TableRow>
               <TableHead>Type Name</TableHead>
