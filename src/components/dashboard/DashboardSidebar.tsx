@@ -2,49 +2,91 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Building2, Users, Handshake, Tags, Wrench, Mail } from "lucide-react";
+import { useEffect, useState } from "react";
+import { LogOut } from "lucide-react";
+import {
+  DASHBOARD_BASE,
+  dashboardNavItems,
+} from "@/config/dashboard-nav";
 import { mockMessages } from "@/data/dashboard-mock";
+import {
+  PROFILE_UPDATED_EVENT,
+  defaultDashboardProfile,
+  initialsFromName,
+  readStoredDashboardProfile,
+} from "@/lib/dashboard-profile-storage";
 import { cn } from "@/lib/utils";
-
-const base = "/dashboard";
-
-const navItems = [
-  { href: `${base}/projects`, label: "Projects", icon: Building2 },
-  { href: `${base}/clients`, label: "Clients", icon: Handshake },
-  { href: `${base}/team`, label: "Team", icon: Users },
-  { href: `${base}/service-types`, label: "Service Types", icon: Tags },
-  { href: `${base}/service-fields`, label: "Service Fields", icon: Wrench },
-  { href: `${base}/inbox`, label: "Inbox", icon: Mail },
-];
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { Button } from "../ui/button";
+import { ThemeSwitch } from "../ui/theme-switch";
 
 const initialInboxUnread = mockMessages.filter((m) => !m.isRead).length;
 
 export default function DashboardSidebar() {
   const pathname = usePathname();
+  const [fullName, setFullName] = useState(defaultDashboardProfile.fullName);
+  const [role, setRole] = useState(defaultDashboardProfile.role);
+  const [avatarDataUrl, setAvatarDataUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    const apply = () => {
+      const p = readStoredDashboardProfile();
+      if (!p) return;
+      setFullName(p.fullName);
+      setRole(p.role);
+      setAvatarDataUrl(p.avatarDataUrl);
+    };
+    apply();
+    window.addEventListener(PROFILE_UPDATED_EVENT, apply);
+    window.addEventListener("storage", apply);
+    return () => {
+      window.removeEventListener(PROFILE_UPDATED_EVENT, apply);
+      window.removeEventListener("storage", apply);
+    };
+  }, []);
 
   return (
-    <aside className="fixed left-0 top-0 z-50 flex h-screen w-64 flex-col bg-dash-sidebar-bg">
-      <div className="border-b border-dash-sidebar-border p-6">
-        <h1 className="font-heading text-2xl font-bold tracking-wide text-dash-sidebar-active">
-          ALDAR
-        </h1>
-        <p className="mt-0.5 text-xs text-dash-sidebar-fg/60">الـــدار</p>
+    <aside className="fixed left-0 top-0 z-50 flex h-screen w-64 flex-col bg-gradient-to-b from-[#6366f1] to-[#2e2b6b]">
+
+
+      <div className="flex items-center border-b border-dash-sidebar-border p-6">
+        <Link
+          href={DASHBOARD_BASE}
+          className="inline-flex rounded-md outline-none ring-offset-2 ring-offset-[#6366f1] transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-white"
+          title="Overview"
+        >
+          <img
+            src="/aldar-logo.png"
+            alt="ALDAR — go to Overview"
+            className="h-12 w-auto"
+          />
+        </Link>
       </div>
 
       <div className="flex items-center gap-3 border-b border-dash-sidebar-border p-4">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-dash-sidebar-hover font-heading text-sm font-bold text-dash-sidebar-fg">
-          MA
-        </div>
-        <div>
-          <p className="text-sm font-medium text-dash-sidebar-fg">
-            Prof. Mahmoud
+        <Link
+          href="/dashboard/profile"
+          className="shrink-0 ring-offset-2 ring-offset-transparent hover:ring-2 hover:ring-primary transition-all rounded-full"
+        >
+          <Avatar className="h-10 w-10 border border-white/20">
+            {avatarDataUrl ? (
+              <AvatarImage src={avatarDataUrl} alt="" />
+            ) : null}
+            <AvatarFallback className="bg-dash-sidebar-hover font-heading text-xs font-bold text-dash-sidebar-fg">
+              {initialsFromName(fullName)}
+            </AvatarFallback>
+          </Avatar>
+        </Link>
+        <div className="min-w-0">
+          <p className="truncate text-sm font-medium text-dash-sidebar-fg">
+            {fullName}
           </p>
-          <p className="text-xs text-dash-sidebar-fg/50">Administrator</p>
+          <p className="truncate text-xs text-dash-sidebar-fg/50">{role}</p>
         </div>
       </div>
 
       <nav className="flex-1 space-y-1 overflow-y-auto p-3">
-        {navItems.map((item) => {
+        {dashboardNavItems.map((item) => {
           const isActive =
             pathname === item.href || pathname.startsWith(`${item.href}/`);
           return (
@@ -54,14 +96,14 @@ export default function DashboardSidebar() {
               className={cn(
                 "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
                 isActive
-                  ? "bg-dash-sidebar-active/15 text-dash-sidebar-active"
-                  : "text-dash-sidebar-fg/70 hover:bg-dash-sidebar-hover hover:text-dash-sidebar-fg",
+                  ? "bg-[#312e81] text-white"
+                  : "text-dash-sidebar-fg/70 hover:bg-[#1b1464] hover:text-white",
               )}
             >
-              <item.icon className="h-4 w-4" />
-              {item.label}
-              {item.href.endsWith("/inbox") && initialInboxUnread > 0 && (
-                <span className="ml-auto flex h-5 w-5 items-center justify-center rounded-full bg-destructive text-[10px] font-bold text-destructive-foreground">
+              <item.icon className="h-4 w-4 shrink-0" />
+              <span className="truncate">{item.label}</span>
+              {item.inboxBadge && initialInboxUnread > 0 && (
+                <span className="ml-auto flex h-5 min-w-5 shrink-0 items-center justify-center rounded-full bg-destructive px-1 text-[10px] font-bold text-destructive-foreground">
                   {initialInboxUnread}
                 </span>
               )}
@@ -70,11 +112,26 @@ export default function DashboardSidebar() {
         })}
       </nav>
 
-      <div className="border-t border-dash-sidebar-border p-4">
-        <p className="text-[10px] text-dash-sidebar-fg/30">
+      <div className="border-t border-dash-sidebar-border p-4 flex flex-col gap-3 mt-auto">
+        <div className="flex items-center gap-3 ml-0" style={{marginLeft: '0.75rem'}}>
+          <Button
+            variant="ghost"
+            className="flex items-center gap-2 text-dash-sidebar-fg hover:bg-transparent hover:text-white"
+            onClick={() => {
+              if (typeof window !== 'undefined') {
+                window.location.href = '/auth/login';
+              }
+            }}
+          >
+            <LogOut className="mr-2" /> Logout
+          </Button>
+          <ThemeSwitch />
+        </div>
+        <p className="text-[10px] text-dash-sidebar-fg/30 mt-2 text-center">
           ALDAR Dashboard v1.0
         </p>
       </div>
+    
     </aside>
   );
 }
