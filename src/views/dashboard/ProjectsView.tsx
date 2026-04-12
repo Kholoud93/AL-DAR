@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PageHeader from "@/components/dashboard/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -44,9 +44,14 @@ import type { Project } from "@/types/dashboard";
 import {
   mockProjects,
   mockClients,
+  mockCountries,
   mockServiceFields,
   mockServiceTypes,
 } from "@/data/dashboard-mock";
+import {
+  COUNTRIES_UPDATED_EVENT,
+  loadCountries,
+} from "@/lib/dashboard-countries-storage";
 
 const statusColors: Record<string, string> = {
   "In Progress": "bg-info/15 text-info border-info/30",
@@ -56,6 +61,7 @@ const statusColors: Record<string, string> = {
 
 export default function ProjectsView() {
   const [projects, setProjects] = useState<Project[]>(mockProjects);
+  const [countries, setCountries] = useState(mockCountries);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const [viewProject, setViewProject] = useState<Project | null>(null);
@@ -66,24 +72,39 @@ export default function ProjectsView() {
     startDate: "",
     endDate: "",
     status: "In Progress" as Project["status"],
+    countryId: "",
     location: "",
     clientId: "",
     serviceFieldId: "",
     serviceTypeIds: [] as string[],
   });
 
-  const resetForm = () =>
+  useEffect(() => {
+    const sync = () => setCountries(loadCountries());
+    sync();
+    window.addEventListener(COUNTRIES_UPDATED_EVENT, sync);
+    window.addEventListener("storage", sync);
+    return () => {
+      window.removeEventListener(COUNTRIES_UPDATED_EVENT, sync);
+      window.removeEventListener("storage", sync);
+    };
+  }, []);
+
+  const resetForm = () => {
+    const list = loadCountries();
     setForm({
       name: "",
       description: "",
       startDate: "",
       endDate: "",
       status: "In Progress",
+      countryId: list[0]?.id ?? "",
       location: "",
       clientId: "",
       serviceFieldId: "",
       serviceTypeIds: [],
     });
+  };
 
   const openAdd = () => {
     resetForm();
@@ -98,6 +119,7 @@ export default function ProjectsView() {
       startDate: p.startDate,
       endDate: p.endDate,
       status: p.status,
+      countryId: p.countryId,
       location: p.location,
       clientId: p.clientId,
       serviceFieldId: p.serviceFieldId,
@@ -143,6 +165,7 @@ export default function ProjectsView() {
 
   if (viewProject) {
     const client = mockClients.find((c) => c.id === viewProject.clientId);
+    const country = countries.find((c) => c.id === viewProject.countryId);
     const field = mockServiceFields.find(
       (f) => f.id === viewProject.serviceFieldId,
     );
@@ -191,6 +214,22 @@ export default function ProjectsView() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4 text-sm">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-muted-foreground">Country:</span>
+              {country ? (
+                <>
+                  <span className="font-medium">{country.name}</span>
+                  <Badge
+                    variant="secondary"
+                    className="font-mono text-xs font-semibold tracking-wide"
+                  >
+                    {country.code}
+                  </Badge>
+                </>
+              ) : (
+                <span className="font-medium">—</span>
+              )}
+            </div>
             <div>
               <span className="text-muted-foreground">Location:</span>{" "}
               <span className="ml-2 font-medium">{viewProject.location}</span>
@@ -256,16 +295,20 @@ export default function ProjectsView() {
         title="Projects"
         description="Manage your firm's portfolio"
         action={
-          <Button onClick={openAdd}>
+          <Button
+            onClick={openAdd}
+            variant="gradient"
+          >
             <Plus className="mr-2 h-4 w-4" /> Add Project
           </Button>
         }
       />
-      <Card>
-        <Table>
+      <Card className="bg-background">
+        <Table className="bg-background">
           <TableHeader>
             <TableRow>
               <TableHead>Project Name</TableHead>
+              <TableHead>Country</TableHead>
               <TableHead>Status</TableHead>
               <TableHead>Created</TableHead>
               <TableHead>Updated</TableHead>
@@ -280,6 +323,27 @@ export default function ProjectsView() {
                 onClick={() => setViewProject(p)}
               >
                 <TableCell className="font-medium">{p.name}</TableCell>
+                <TableCell>
+                  {(() => {
+                    const co = countries.find((c) => c.id === p.countryId);
+                    if (!co) {
+                      return (
+                        <span className="text-sm text-muted-foreground">—</span>
+                      );
+                    }
+                    return (
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="text-sm">{co.name}</span>
+                        <Badge
+                          variant="outline"
+                          className="font-mono text-[10px] font-semibold uppercase tracking-wide"
+                        >
+                          {co.code}
+                        </Badge>
+                      </div>
+                    );
+                  })()}
+                </TableCell>
                 <TableCell>
                   <Badge className={statusColors[p.status]}>{p.status}</Badge>
                 </TableCell>
@@ -382,8 +446,31 @@ export default function ProjectsView() {
                 <SelectItem value="On Hold">On Hold</SelectItem>
               </SelectContent>
             </Select>
+            <Select
+              value={form.countryId}
+              onValueChange={(v) => setForm((f) => ({ ...f, countryId: v }))}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Country" />
+              </SelectTrigger>
+              <SelectContent>
+                {countries.map((c) => (
+                  <SelectItem key={c.id} value={c.id}>
+                    <span className="flex items-center gap-2">
+                      <span>{c.name}</span>
+                      <Badge
+                        variant="outline"
+                        className="font-mono text-[10px] font-semibold uppercase tracking-wide"
+                      >
+                        {c.code}
+                      </Badge>
+                    </span>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
             <Input
-              placeholder="Location"
+              placeholder="City / region / address"
               value={form.location}
               onChange={(e) =>
                 setForm((f) => ({ ...f, location: e.target.value }))
@@ -440,7 +527,10 @@ export default function ProjectsView() {
             </div>
           </div>
           <DialogFooter>
-            <Button onClick={handleSave} disabled={!form.name}>
+            <Button
+              onClick={handleSave}
+              disabled={!form.name || !form.countryId}
+            >
               Save
             </Button>
           </DialogFooter>
