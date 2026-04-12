@@ -105,8 +105,8 @@ export default function TeamView() {
         >
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Team
         </Button>
-        <Card className="p-6 md:p-5">
-          <div className="flex flex-col gap-6 md:flex-row md:items-start">
+        <Card className="p-6">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
             <Avatar className="h-24 w-24 shrink-0 border">
               {viewMember.photo ? (
                 <AvatarImage src={viewMember.photo} alt={viewMember.fullName} />
@@ -117,7 +117,7 @@ export default function TeamView() {
             </Avatar>
             <div className="min-w-0 flex-1 space-y-4">
               <div>
-                <h2 className="font-heading text-2xl font-bold md:text-xl">
+                <h2 className="font-heading text-2xl font-bold">
                   {viewMember.fullName}
                 </h2>
                 <p className="mt-1 text-sm text-muted-foreground">
@@ -210,8 +210,8 @@ export default function TeamView() {
           </Button>
         }
       />
-      <Card className="min-w-0 overflow-x-auto bg-background">
-        <Table className="bg-background text-sm md:text-xs">
+      <Card className="bg-background">
+        <Table className="bg-background">
           <TableHeader>
             <TableRow>
               <TableHead>Member</TableHead>
