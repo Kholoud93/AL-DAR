@@ -3,8 +3,6 @@ import { Inter, Manrope } from "next/font/google";
 import type { ReactNode } from "react";
 import "../index.css";
 import { AppProviders } from "@/components/providers";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -68,11 +66,7 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} ${inter.variable} font-sans antialiased`}
       >
-        <AppProviders>
-          <Header />
-          {children}
-          <Footer />
-        </AppProviders>
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   );
