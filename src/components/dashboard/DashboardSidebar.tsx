@@ -122,7 +122,7 @@ export function DashboardSidebarPanel({ onNavigate }: DashboardSidebarPanelProps
       </div>
 
       <nav
-        className="flex min-h-0 flex-1 flex-col gap-1 overflow-hidden p-3 md:p-2 md:pt-2"
+        className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto overflow-x-hidden p-3 md:p-2 md:pt-2"
         aria-label="Dashboard"
       >
         {dashboardNavItems.map((item) => {
