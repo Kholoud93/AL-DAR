@@ -92,7 +92,7 @@ export default function ClientsView() {
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Clients
         </Button>
         <Card className="p-6">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
+          <div className="flex flex-col gap-6 md:flex-row md:items-start">
             <Avatar className="h-24 w-24 shrink-0 border">
               {viewClient.logo ? (
                 <AvatarImage src={viewClient.logo} alt={viewClient.name} />
@@ -201,7 +201,7 @@ export default function ClientsView() {
           </Button>
         }
       />
-      <Card className="bg-background">
+      <Card className="min-w-0 overflow-x-auto bg-background">
         <Table className="bg-background">
           <TableHeader>
             <TableRow>

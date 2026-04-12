@@ -190,7 +190,7 @@ export default function ServiceTypesView() {
           </Button>
         }
       />
-      <Card className="bg-background">
+      <Card className="min-w-0 overflow-x-auto bg-background">
         <Table className="bg-background">
           <TableHeader>
             <TableRow>

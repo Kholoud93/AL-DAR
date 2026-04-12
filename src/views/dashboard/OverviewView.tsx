@@ -18,7 +18,7 @@ export default function OverviewView() {
   const { kpis } = mockDashboardStats;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 md:space-y-8">
       <div>
         <h1 className="font-heading text-2xl font-bold text-foreground">
           Overview
@@ -55,7 +55,7 @@ export default function OverviewView() {
             New vs completed projects over the last 6 months.
           </p>
         </CardHeader>
-        <CardContent className="h-[320px] pt-2">
+        <CardContent className="h-[min(320px,55vh)] min-h-[220px] pt-2 md:h-[320px]">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart
               data={chartData}

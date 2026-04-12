@@ -182,8 +182,8 @@ export default function ProjectsView() {
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
         </Button>
         <Card className="p-6">
-          <div className="mb-6 flex items-center justify-between">
-            <div>
+          <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-0">
+            <div className="min-w-0">
               <h2 className="font-heading text-xl font-bold">
                 {viewProject.name}
               </h2>
@@ -193,7 +193,7 @@ export default function ProjectsView() {
                 {viewProject.status}
               </Badge>
             </div>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2 md:flex-nowrap">
               <Button
                 variant="outline"
                 size="sm"
@@ -303,7 +303,7 @@ export default function ProjectsView() {
           </Button>
         }
       />
-      <Card className="bg-background">
+      <Card className="min-w-0 overflow-x-auto bg-background">
         <Table className="bg-background">
           <TableHeader>
             <TableRow>

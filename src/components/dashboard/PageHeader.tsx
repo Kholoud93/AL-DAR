@@ -12,8 +12,8 @@ export default function PageHeader({
   action,
 }: PageHeaderProps) {
   return (
-    <div className="mb-8 flex items-center justify-between">
-      <div>
+    <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-0">
+      <div className="min-w-0">
         <h1 className="font-heading text-2xl font-bold text-foreground">
           {title}
         </h1>
@@ -21,7 +21,11 @@ export default function PageHeader({
           <p className="mt-1 text-sm text-muted-foreground">{description}</p>
         )}
       </div>
-      {action}
+      {action ? (
+        <div className="flex w-full shrink-0 justify-stretch md:w-auto md:justify-end [&_button]:w-full md:[&_button]:w-auto">
+          {action}
+        </div>
+      ) : null}
     </div>
   );
 }

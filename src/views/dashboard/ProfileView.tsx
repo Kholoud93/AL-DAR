@@ -122,14 +122,14 @@ export default function ProfileView() {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="min-w-0 space-y-6 md:space-y-8">
       <PageHeader
         title="Profile"
         description="Your account details and security preferences"
       />
 
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,280px)_1fr]">
-        <Card className="h-fit border-border/80 bg-background shadow-sm">
+      <div className="grid min-w-0 gap-6 lg:grid-cols-[minmax(0,280px)_1fr]">
+        <Card className="h-fit min-w-0 border-border/80 bg-background shadow-sm">
           <CardHeader className="text-center">
             <div className="mx-auto flex flex-col items-center gap-4">
               <Avatar className="h-28 w-28 border-2 border-border text-2xl">
