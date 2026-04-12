@@ -69,3 +69,30 @@ export interface ContactMessage {
   isRead: boolean;
   receivedAt: string;
 }
+
+export type CertificateStatus = "Active" | "Expiring soon" | "Expired";
+
+/** Company credential / accreditation record (mock data for dashboard). */
+export interface Certificate {
+  id: string;
+  /** Full official title on the certificate */
+  title: string;
+  /** Short label for lists */
+  shortName: string;
+  /** Issuing authority or registrar */
+  issuingBody: string;
+  /** Registration, license, or credential identifier */
+  credentialId: string;
+  issueDate: string;
+  /** Empty string if no expiry (lifetime) */
+  expiryDate: string;
+  /** Standard, scope of accreditation, or field of recognition */
+  scope: string;
+  category: string;
+  status: CertificateStatus;
+  /** Public verification or registry URL, if applicable */
+  verificationUrl: string;
+  /** Registered office or certificate holder address */
+  registeredAddress: string;
+  additionalNotes: string;
+}

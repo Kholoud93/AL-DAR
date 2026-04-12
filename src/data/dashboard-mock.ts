@@ -6,6 +6,7 @@ import type {
   ServiceField,
   ServiceType,
   ContactMessage,
+  Certificate,
 } from "@/types/dashboard";
 
 export const mockClients: Client[] = [
@@ -259,6 +260,62 @@ export const mockMessages: ContactMessage[] = [
     body: "We need consultation services for our new residential development.",
     isRead: false,
     receivedAt: "2026-04-02",
+  },
+];
+
+export const mockCertificates: Certificate[] = [
+  {
+    id: "cert1",
+    title: "ISO 9001:2015 — Quality Management Systems",
+    shortName: "ISO 9001:2015",
+    issuingBody: "Bureau Veritas Certification Holding SAS",
+    credentialId: "SA-9001-ALDAR-2024-88421",
+    issueDate: "2024-06-01",
+    expiryDate: "2027-05-31",
+    scope:
+      "Design, engineering consultancy, and project management for architectural and construction-related services.",
+    category: "Quality management",
+    status: "Active",
+    verificationUrl: "https://www.bureauveritas.com/certification-directory",
+    registeredAddress:
+      "ALDAR Engineering Consultants, King Fahd Road, Business District, Riyadh 11564, Saudi Arabia",
+    additionalNotes:
+      "Surveillance audits scheduled annually. Certificate covers all Riyadh and Jeddah offices.",
+  },
+  {
+    id: "cert2",
+    title: "Saudi Council of Engineers — Professional Engineering Practice",
+    shortName: "SCE membership",
+    issuingBody: "Saudi Council of Engineers (SCE)",
+    credentialId: "SCE-PE-441902",
+    issueDate: "2023-01-15",
+    expiryDate: "2026-01-14",
+    scope:
+      "Practice of engineering disciplines aligned with SCE regulations for consulting firms operating in the Kingdom.",
+    category: "Professional license",
+    status: "Expiring soon",
+    verificationUrl: "https://www.sce.org.sa",
+    registeredAddress:
+      "Principal place of business as registered with SCE — Riyadh, Saudi Arabia",
+    additionalNotes:
+      "Renewal application to be submitted 90 days before expiry. Firm-level registration; individual engineer licenses listed separately.",
+  },
+  {
+    id: "cert3",
+    title: "ISO 14001:2015 — Environmental Management Systems",
+    shortName: "ISO 14001:2015",
+    issuingBody: "TÜV SÜD Middle East",
+    credentialId: "ME-ENV-2025-ALD-0098",
+    issueDate: "2025-02-10",
+    expiryDate: "2028-02-09",
+    scope:
+      "Environmental management for design, site supervision, and construction support activities.",
+    category: "Environmental",
+    status: "Active",
+    verificationUrl: "https://www.tuvsud.com/en/services/certificates",
+    registeredAddress:
+      "ALDAR Engineering Consultants, Riyadh, Kingdom of Saudi Arabia",
+    additionalNotes: "Aligned with national environmental regulations and project EIA requirements where applicable.",
   },
 ];
 
