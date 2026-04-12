@@ -161,7 +161,7 @@ export default function InboxView() {
           </div>
         </div>
 
-        <Table className="bg-background">
+        <Table className="bg-background text-sm md:text-xs">
           <TableHeader>
             <TableRow>
               <TableHead className="w-10" />

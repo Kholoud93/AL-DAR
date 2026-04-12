@@ -56,7 +56,7 @@ export function DashboardSidebarPanel({ onNavigate }: DashboardSidebarPanelProps
 
   return (
     <>
-      <div className="flex items-center border-b border-dash-sidebar-border p-6">
+      <div className="flex items-center border-b border-dash-sidebar-border p-6 md:p-4">
         <Link
           href={DASHBOARD_BASE}
           onClick={handleNav}
@@ -66,18 +66,18 @@ export function DashboardSidebarPanel({ onNavigate }: DashboardSidebarPanelProps
           <img
             src="/aldar-logo.png"
             alt="ALDAR — go to Overview"
-            className="h-12 w-auto"
+            className="h-12 w-auto md:h-10"
           />
         </Link>
       </div>
 
-      <div className="flex items-center gap-3 border-b border-dash-sidebar-border p-4">
+      <div className="flex items-center gap-3 border-b border-dash-sidebar-border p-4 md:p-3 md:gap-2.5">
         <Link
           href="/dashboard/profile"
           onClick={handleNav}
           className="shrink-0 rounded-full ring-offset-2 ring-offset-transparent transition-all hover:ring-2 hover:ring-primary"
         >
-          <Avatar className="h-10 w-10 border border-white/20">
+          <Avatar className="h-10 w-10 border border-white/20 md:h-9 md:w-9">
             {avatarDataUrl ? (
               <AvatarImage src={avatarDataUrl} alt="" />
             ) : null}
@@ -87,14 +87,16 @@ export function DashboardSidebarPanel({ onNavigate }: DashboardSidebarPanelProps
           </Avatar>
         </Link>
         <div className="min-w-0">
-          <p className="truncate text-sm font-medium text-dash-sidebar-fg">
+          <p className="truncate text-sm font-medium text-dash-sidebar-fg md:text-[13px]">
             {fullName}
           </p>
-          <p className="truncate text-xs text-dash-sidebar-fg/50">{role}</p>
+          <p className="truncate text-xs text-dash-sidebar-fg/50 md:text-[11px]">
+            {role}
+          </p>
         </div>
       </div>
 
-      <nav className="flex-1 space-y-1 overflow-y-auto p-3">
+      <nav className="flex-1 space-y-1 overflow-y-auto p-3 md:p-2 md:pt-2">
         {dashboardNavItems.map((item) => {
           const isActive =
             pathname === item.href || pathname.startsWith(`${item.href}/`);
@@ -104,13 +106,13 @@ export function DashboardSidebarPanel({ onNavigate }: DashboardSidebarPanelProps
               href={item.href}
               onClick={handleNav}
               className={cn(
-                "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
+                "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200 md:gap-2.5 md:px-2.5 md:py-2 md:text-[13px]",
                 isActive
                   ? "bg-[#312e81] text-white"
                   : "text-dash-sidebar-fg/70 hover:bg-[#1b1464] hover:text-white",
               )}
             >
-              <item.icon className="h-4 w-4 shrink-0" />
+              <item.icon className="h-4 w-4 shrink-0 md:h-3.5 md:w-3.5" />
               <span className="truncate">{item.label}</span>
               {item.inboxBadge && initialInboxUnread > 0 && (
                 <span className="ml-auto flex h-5 min-w-5 shrink-0 items-center justify-center rounded-full bg-destructive px-1 text-[10px] font-bold text-destructive-foreground">
@@ -122,8 +124,8 @@ export function DashboardSidebarPanel({ onNavigate }: DashboardSidebarPanelProps
         })}
       </nav>
 
-      <div className="mt-auto flex flex-col gap-3 border-t border-dash-sidebar-border p-4">
-        <div className="ml-3 flex items-center gap-3">
+      <div className="mt-auto flex flex-col gap-3 border-t border-dash-sidebar-border p-4 md:gap-2 md:p-3">
+        <div className="ml-3 flex items-center gap-3 md:ml-2 md:gap-2">
           <Button
             variant="ghost"
             className="flex items-center gap-2 text-dash-sidebar-fg hover:bg-transparent hover:text-white"
@@ -137,7 +139,7 @@ export function DashboardSidebarPanel({ onNavigate }: DashboardSidebarPanelProps
           </Button>
           <ThemeSwitch />
         </div>
-        <p className="mt-2 text-center text-[10px] text-dash-sidebar-fg/30">
+        <p className="mt-2 text-center text-[10px] text-dash-sidebar-fg/30 md:text-[9px]">
           ALDAR Dashboard v1.0
         </p>
       </div>
@@ -147,7 +149,7 @@ export function DashboardSidebarPanel({ onNavigate }: DashboardSidebarPanelProps
 
 export default function DashboardSidebar() {
   return (
-    <aside className="fixed left-0 top-0 z-50 hidden h-screen w-64 bg-gradient-to-b from-[#6366f1] to-[#2e2b6b] md:flex md:flex-col">
+    <aside className="fixed left-0 top-0 z-50 hidden h-screen w-64 bg-gradient-to-b from-[#6366f1] to-[#2e2b6b] md:flex md:w-56 md:flex-col">
       <DashboardSidebarPanel />
     </aside>
   );

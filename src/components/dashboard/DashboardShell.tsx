@@ -68,7 +68,7 @@ export function DashboardShell({ children }: { children: ReactNode }) {
       </header>
 
       <DashboardSidebar />
-      <main className="min-w-0 max-w-[100vw] animate-fade-in px-4 pb-8 pt-[calc(3.5rem+1.5rem)] md:ml-64 md:max-w-none md:px-8 md:pb-8 md:pt-8">
+      <main className="min-w-0 max-w-[100vw] animate-fade-in px-4 pb-8 pt-[calc(3.5rem+1.5rem)] md:ml-56 md:max-w-none md:px-6 md:pb-6 md:pt-6">
         {children}
       </main>
     </div>

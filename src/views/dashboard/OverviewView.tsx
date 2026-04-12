@@ -18,12 +18,12 @@ export default function OverviewView() {
   const { kpis } = mockDashboardStats;
 
   return (
-    <div className="space-y-6 md:space-y-8">
+    <div className="space-y-6 md:space-y-6">
       <div>
-        <h1 className="font-heading text-2xl font-bold text-foreground">
+        <h1 className="font-heading text-2xl font-bold text-foreground md:text-xl">
           Overview
         </h1>
-        <p className="mt-1 text-sm text-muted-foreground">
+        <p className="mt-1 text-sm text-muted-foreground md:text-xs">
           Snapshot of activity and pipeline health.
         </p>
       </div>
@@ -31,13 +31,13 @@ export default function OverviewView() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {kpis.map((k) => (
           <Card key={k.label}>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">
+            <CardHeader className="pb-2 md:pb-1.5">
+              <CardTitle className="text-sm font-medium text-muted-foreground md:text-xs">
                 {k.label}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="font-heading text-3xl font-bold text-foreground">
+              <p className="font-heading text-3xl font-bold text-foreground md:text-2xl">
                 {k.value}
               </p>
               <p className="mt-1 text-xs text-muted-foreground">{k.hint}</p>
@@ -47,15 +47,15 @@ export default function OverviewView() {
       </div>
 
       <Card>
-        <CardHeader>
-          <CardTitle className="font-heading text-lg font-semibold">
+        <CardHeader className="md:pb-3">
+          <CardTitle className="font-heading text-lg font-semibold md:text-base">
             Pipeline trend
           </CardTitle>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground md:text-xs">
             New vs completed projects over the last 6 months.
           </p>
         </CardHeader>
-        <CardContent className="h-[min(320px,55vh)] min-h-[220px] pt-2 md:h-[320px]">
+        <CardContent className="h-[min(320px,55vh)] min-h-[220px] pt-2 md:h-[280px]">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart
               data={chartData}

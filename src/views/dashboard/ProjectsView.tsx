@@ -181,10 +181,10 @@ export default function ProjectsView() {
         >
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
         </Button>
-        <Card className="p-6">
+        <Card className="p-6 md:p-5">
           <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-0">
             <div className="min-w-0">
-              <h2 className="font-heading text-xl font-bold">
+              <h2 className="font-heading text-xl font-bold md:text-lg">
                 {viewProject.name}
               </h2>
               <Badge
@@ -304,7 +304,7 @@ export default function ProjectsView() {
         }
       />
       <Card className="min-w-0 overflow-x-auto bg-background">
-        <Table className="bg-background">
+        <Table className="bg-background text-sm md:text-xs">
           <TableHeader>
             <TableRow>
               <TableHead>Project Name</TableHead>
