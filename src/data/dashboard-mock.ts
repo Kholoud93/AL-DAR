@@ -1,5 +1,6 @@
 import type {
   Project,
+  Country,
   Client,
   TeamMember,
   ServiceField,
@@ -28,6 +29,13 @@ export const mockClients: Client[] = [
     logo: "",
     createdAt: "2025-03-10",
     updatedAt: "2025-03-10",
+  },
+  {
+    id: "c4",
+    name: "Red Sea Global",
+    logo: "",
+    createdAt: "2025-04-01",
+    updatedAt: "2025-04-01",
   },
 ];
 
@@ -83,6 +91,37 @@ export const mockServiceTypes: ServiceType[] = [
   },
 ];
 
+export const mockCountries: Country[] = [
+  {
+    id: "co1",
+    name: "Saudi Arabia",
+    code: "SA",
+    createdAt: "2025-01-01",
+    updatedAt: "2025-01-01",
+  },
+  {
+    id: "co2",
+    name: "United Arab Emirates",
+    code: "AE",
+    createdAt: "2025-01-01",
+    updatedAt: "2025-01-01",
+  },
+  {
+    id: "co3",
+    name: "Egypt",
+    code: "EG",
+    createdAt: "2025-01-01",
+    updatedAt: "2025-01-01",
+  },
+  {
+    id: "co4",
+    name: "Kuwait",
+    code: "KW",
+    createdAt: "2025-01-01",
+    updatedAt: "2025-01-01",
+  },
+];
+
 export const mockProjects: Project[] = [
   {
     id: "p1",
@@ -92,6 +131,7 @@ export const mockProjects: Project[] = [
     startDate: "2025-01-01",
     endDate: "2026-06-30",
     status: "In Progress",
+    countryId: "co1",
     location: "Riyadh, KSA",
     clientId: "c1",
     serviceFieldId: "sf1",
@@ -107,6 +147,7 @@ export const mockProjects: Project[] = [
     startDate: "2024-06-01",
     endDate: "2025-12-31",
     status: "Completed",
+    countryId: "co1",
     location: "Jeddah, KSA",
     clientId: "c2",
     serviceFieldId: "sf2",
@@ -114,6 +155,38 @@ export const mockProjects: Project[] = [
     images: [],
     createdAt: "2024-06-01",
     updatedAt: "2025-12-31",
+  },
+  {
+    id: "p3",
+    name: "King Abdullah Financial District Hub",
+    description: "Mixed-use commercial and retail hub",
+    startDate: "2025-03-01",
+    endDate: "2027-12-31",
+    status: "In Progress",
+    countryId: "co1",
+    location: "Riyadh, KSA",
+    clientId: "c3",
+    serviceFieldId: "sf3",
+    serviceTypeIds: ["st1"],
+    images: [],
+    createdAt: "2025-03-01",
+    updatedAt: "2025-04-01",
+  },
+  {
+    id: "p4",
+    name: "Red Sea Coastal Resort",
+    description: "Hospitality and leisure development",
+    startDate: "2024-09-01",
+    endDate: "2026-03-31",
+    status: "On Hold",
+    countryId: "co1",
+    location: "Tabuk, KSA",
+    clientId: "c4",
+    serviceFieldId: "sf2",
+    serviceTypeIds: ["st3"],
+    images: [],
+    createdAt: "2024-09-01",
+    updatedAt: "2025-02-15",
   },
 ];
 
@@ -144,6 +217,15 @@ export const mockTeam: TeamMember[] = [
     photo: "",
     createdAt: "2024-06-01",
     updatedAt: "2024-06-01",
+  },
+  {
+    id: "t4",
+    fullName: "Layla Al-Mutairi",
+    position: "Lead Engineer",
+    specialization: "Structural",
+    photo: "",
+    createdAt: "2025-01-10",
+    updatedAt: "2025-01-10",
   },
 ];
 
@@ -179,3 +261,36 @@ export const mockMessages: ContactMessage[] = [
     receivedAt: "2026-04-02",
   },
 ];
+
+export const mockDashboardStats = {
+  kpis: [
+    {
+      label: "Active projects",
+      value: "12",
+      hint: "3 due this quarter",
+    },
+    {
+      label: "Pipeline value",
+      value: "SAR 24M",
+      hint: "vs last month +8%",
+    },
+    {
+      label: "Team capacity",
+      value: "78%",
+      hint: "2 roles open",
+    },
+    {
+      label: "Open messages",
+      value: "5",
+      hint: "2 unread",
+    },
+  ],
+  chartData: [
+    { month: "Nov", new: 4, completed: 2 },
+    { month: "Dec", new: 5, completed: 3 },
+    { month: "Jan", new: 6, completed: 4 },
+    { month: "Feb", new: 5, completed: 5 },
+    { month: "Mar", new: 7, completed: 4 },
+    { month: "Apr", new: 6, completed: 6 },
+  ],
+};

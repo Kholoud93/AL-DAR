@@ -1,3 +1,12 @@
+export interface Country {
+  id: string;
+  name: string;
+  /** ISO 3166-1 alpha-2 (e.g. SA, AE) */
+  code: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface Project {
   id: string;
   name: string;
@@ -5,6 +14,7 @@ export interface Project {
   startDate: string;
   endDate: string;
   status: "In Progress" | "Completed" | "On Hold";
+  countryId: string;
   location: string;
   clientId: string;
   serviceFieldId: string;
