@@ -9,7 +9,10 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { Pencil } from "lucide-react";
+import { toast } from "sonner";
 import { mockDashboardStats } from "@/data/dashboard-mock";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const chartData = mockDashboardStats.chartData;
@@ -32,9 +35,23 @@ export default function OverviewView() {
         {kpis.map((k) => (
           <Card key={k.label}>
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">
-                {k.label}
-              </CardTitle>
+              <div className="flex items-start justify-between gap-2">
+                <CardTitle className="text-sm font-medium text-muted-foreground">
+                  {k.label}
+                </CardTitle>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  className="h-8 w-8 shrink-0 text-muted-foreground hover:text-foreground"
+                  aria-label={`Edit ${k.label}`}
+                  onClick={() =>
+                    toast.info("KPI editing will be available when connected to your backend.")
+                  }
+                >
+                  <Pencil className="h-4 w-4" />
+                </Button>
+              </div>
             </CardHeader>
             <CardContent>
               <p className="font-heading text-3xl font-bold text-foreground">

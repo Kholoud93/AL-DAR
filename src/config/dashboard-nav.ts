@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  Award,
   Building2,
   Globe2,
   Handshake,
@@ -30,6 +31,11 @@ export const dashboardNavItems: DashboardNavItem[] = [
     icon: Wrench,
   },
   { href: `${DASHBOARD_BASE}/service-types`, label: "Service Types", icon: Tags },
+  {
+    href: `${DASHBOARD_BASE}/certificate`,
+    label: "Certificates",
+    icon: Award,
+  },
   {
     href: `${DASHBOARD_BASE}/inbox`,
     label: "Inbox",
