@@ -47,7 +47,7 @@ export function DashboardShell({ children }: { children: ReactNode }) {
             className="w-[min(100vw-2rem,16rem)] border-0 bg-gradient-to-b from-[#6366f1] to-[#2e2b6b] p-0 text-white [&>button]:text-white [&>button]:hover:bg-white/10"
           >
             <SheetTitle className="sr-only">Dashboard navigation</SheetTitle>
-            <div className="flex h-full max-h-[100dvh] flex-col overflow-hidden">
+            <div className="flex h-full min-h-0 max-h-[100dvh] flex-col overflow-hidden">
               <DashboardSidebarPanel
                 onNavigate={() => setMobileNavOpen(false)}
               />
